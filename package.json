@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nvm": "0.0.4",
-    "vite": "^8.0.8"
+    "vite": "^8.0.8",
+    "vue": "^3.x"
   }
 }

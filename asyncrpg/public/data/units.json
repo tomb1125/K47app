@@ -1,0 +1,10 @@
+{
+  "factions": [
+    { "id": "usa", "name": "USA" },
+    { "id": "svt", "name": "SVT" }
+  ],
+  "units": [
+    { "id": "sherman", "name": "Sherman", "factionId": "usa" },
+    { "id": "zajcev", "name": "Zajcev", "factionId": "svt" }
+  ]
+}
