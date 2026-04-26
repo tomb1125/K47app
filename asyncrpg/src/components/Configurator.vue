@@ -1,21 +1,21 @@
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import Platoon from './Platoon.vue'
 import { useUnitStore } from '@/stores/unitStore'
+import { useArmyStore } from '@/stores/armyStore'
 import { storeToRefs } from 'pinia'
 
-const platoons = ref([])
+const unitStore = useUnitStore()
+const armyStore = useArmyStore()
 
-const store = useUnitStore()
-const { selectedFaction } = storeToRefs(store)
+const { selectedFaction } = storeToRefs(unitStore)
+const { platoons } = storeToRefs(armyStore)
 
 // button should be disabled if no faction selected
 const isDisabled = computed(() => !selectedFaction.value)
 
 function addPlatoon() {
-  platoons.value.push({
-    id: Date.now()
-  })
+  armyStore.addPlatoon()
 }
 </script>
 
@@ -29,7 +29,7 @@ function addPlatoon() {
     </button>
 
     <div v-for="platoon in platoons" :key="platoon.id">
-      <Platoon :id="platoon.id" />
+      <Platoon :platoon="platoon" />
     </div>
   </div>
 </template>

@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useUnitStore } from '@/stores/unitStore'
+import { useArmyStore } from '@/stores/armyStore'
 import { storeToRefs } from 'pinia'
 import Configurator from './components/Configurator.vue'
 
 const store = useUnitStore()
+const armyStore = useArmyStore()
 const { factions, selectedFaction } = storeToRefs(store)
+const { factionId } = storeToRefs(armyStore)
 
 onMounted(() => {
   store.load()

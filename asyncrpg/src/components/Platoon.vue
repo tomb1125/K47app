@@ -1,32 +1,23 @@
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { useArmyStore } from '@/stores/armyStore'
 import Unit from './Unit.vue'
 
-const props = defineProps({
-  id: Number
-})
+const props = defineProps<{
+  platoon: {
+    id: string
+    units: any[]
+  }
+}>()
 
-const units = ref([])
-
-function addUnit() {
-  units.value.push({
-    id: crypto.randomUUID()
-  })
-}
-
-function removeUnit(id) {
-  units.value = units.value.filter(u => u.id !== id)
-}
+const store = useArmyStore()
 </script>
 
 <template>
   <div class="platoon">
-    <h3>Platoon {{ id }}</h3>
+    <button @click="store.addUnit(platoon.id)">+</button>
 
-    <button @click="addUnit">+</button>
-
-    <div v-for="unit in units" :key="unit.id">
-      <Unit :id="unit.id" @remove="removeUnit" />
+    <div v-for="unit in platoon.units" :key="unit.id">
+      <Unit :platoonId="platoon.id" :unit="unit" />
     </div>
   </div>
 </template>

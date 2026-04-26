@@ -1,26 +1,38 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed } from 'vue'
+import { useArmyStore } from '@/stores/armyStore'
 import { useUnitStore } from '@/stores/unitStore'
 import { storeToRefs } from 'pinia'
 
-const store = useUnitStore()
-const { selectedFaction } = storeToRefs(store)
+const props = defineProps<{
+  platoonId: string
+  unit: {
+    id: string
+    unitId: string | null
+  }
+}>()
 
-const selectedUnit = ref<string | null>(null)
+const armyStore = useArmyStore()
+const unitStore = useUnitStore()
 
-onMounted(() => {
-  store.load()
-})
+const { selectedFaction } = storeToRefs(unitStore)
 
 const availableUnits = computed(() =>
-  store.getUnitsByFaction(selectedFaction.value)
+  unitStore.getUnitsByFaction(selectedFaction.value || '')
 )
+
+function onChange(event: Event) {
+  const value = (event.target as HTMLSelectElement).value
+  armyStore.setUnit(props.platoonId, props.unit.id, value)
+}
 </script>
 
 <template>
   <div class="unit">
-    <!-- Only unit dropdown now -->
-    <select v-model="selectedUnit">
+    <select
+      :value="unit.id || ''"
+      @change="onChange"
+    >
       <option disabled value="">Select unit</option>
       <option
         v-for="u in availableUnits"
@@ -30,5 +42,17 @@ const availableUnits = computed(() =>
         {{ u.name }}
       </option>
     </select>
+
+    <button @click="armyStore.removeUnit(platoonId, unit.id)">
+      🗑
+    </button>
   </div>
 </template>
+
+<style scoped>
+.unit {
+  border: 2px solid #888;
+  padding: 10px;
+  margin: 10px 0;
+}
+</style>
