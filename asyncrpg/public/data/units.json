@@ -7,9 +7,8 @@
       "name": "GALAHAD ARMOURED INFANTRY SQUAD",
       "factionId": "cmn",
       "quality": {
-        "inexpierienced": 42,
-        "regular": 60,
-        "veteran": 78
+        "regular": 120,
+        "veteran": 133
       },
       "options": [
         {
