@@ -9,7 +9,7 @@ const store = useUnitStore()
 const armyStore = useArmyStore()
 const { factions, selectedFaction } = storeToRefs(store)
 const { factionId } = storeToRefs(armyStore)
-
+const { totalPoints } = storeToRefs(armyStore)
 onMounted(() => {
   store.load()
 })
@@ -18,7 +18,9 @@ onMounted(() => {
 <template>
   <div>
     <h1>Army Builder</h1>
-
+    <div>
+      Total Points: {{ totalPoints }}
+    </div>
     <!-- Faction selector -->
     <select v-model="selectedFaction">
       <option

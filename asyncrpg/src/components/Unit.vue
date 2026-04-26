@@ -9,6 +9,7 @@ const props = defineProps<{
   unit: {
     id: string
     unitId: string | null
+    quality: 'inexpierienced' | 'regular' | 'veteran' | null
   }
 }>()
 
@@ -20,25 +21,28 @@ const { selectedFaction } = storeToRefs(unitStore)
 const availableUnits = computed(() =>
   unitStore.getUnitsByFaction(selectedFaction.value || '')
 )
-
-function onChange(event: Event) {
-  const value = (event.target as HTMLSelectElement).value
-  armyStore.setUnit(props.platoonId, props.unit.id, value)
-}
 </script>
 
 <template>
   <div class="unit">
+
+    <!-- ⭐ QUALITY PICKLIST -->
     <select
-      :value="unit.id || ''"
-      @change="onChange"
+      :value="unit.quality || 'regular'"
+      @change="e => armyStore.setQuality(platoonId, unit.id, e.target.value)"
+    >
+      <option value="inexpierienced">Inexperienced</option>
+      <option value="regular">Regular</option>
+      <option value="veteran">Veteran</option>
+    </select>
+
+    <!-- UNIT PICKLIST -->
+    <select
+      :value="unit.unitId || ''"
+      @change="e => armyStore.setUnit(platoonId, unit.id, e.target.value)"
     >
       <option disabled value="">Select unit</option>
-      <option
-        v-for="u in availableUnits"
-        :key="u.id"
-        :value="u.id"
-      >
+      <option v-for="u in availableUnits" :key="u.id" :value="u.id">
         {{ u.name }}
       </option>
     </select>
@@ -46,9 +50,9 @@ function onChange(event: Event) {
     <button @click="armyStore.removeUnit(platoonId, unit.id)">
       🗑
     </button>
+
   </div>
 </template>
-
 <style scoped>
 .unit {
   border: 2px solid #888;

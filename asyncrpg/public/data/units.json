@@ -1,12 +1,8 @@
 {
   "factions": [
-    { "id": "usa", "name": "USA" },
-    { "id": "cmn", "name": "British Commonwealth" },
-    { "id": "svt", "name": "SVT" }
+    { "id": "cmn", "name": "British Commonwealth" }
   ],
   "units": [
-    { "id": "sherman", "name": "Sherman", "factionId": "usa" },
-    { "id": "zajcev", "name": "Zajcev", "factionId": "svt" },
     { "id": "galahad", 
       "name": "GALAHAD ARMOURED INFANTRY SQUAD",
       "factionId": "cmn",
@@ -17,7 +13,7 @@
       },
       "options": [
         {
-          "id": "additionalsoldier",
+          "id": "additionalsoldiers",
           "name": "Additional Soldiers in Grade 1 Powered Armour (No Mixed Quality)",
           "cost-regular": 30,
           "cost-veteran": 33,
@@ -28,8 +24,6 @@
       "upgrades":[
 
       ]
-
-      
     }
   ]
 }
