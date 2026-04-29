@@ -14,7 +14,7 @@
       "options": [
         {
           "id": "additionalsoldiers",
-          "name": "Additional Soldiers in Grade 1 Powered Armour (No Mixed Quality)",
+          "name": "Additional Soldiers",
           "cost-regular": 30,
           "cost-veteran": 33,
           "addModels": 1,
@@ -24,7 +24,11 @@
       ],
         
       "upgrades":[
-
+        {
+          "id": "AntiTankGrenades",
+          "name" : "Anti-tank Grenades",
+          "costPerUnit": 2
+        }
       ]
     }
   ]

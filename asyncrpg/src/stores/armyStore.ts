@@ -8,11 +8,18 @@ export interface ArmyUpgrade {
   count: number,
   addModels?: number
 }
+
+export interface ArmyProperty {
+  propertyId: string
+  selected: boolean
+  costPerUnit: number
+}
 export interface ArmyUnit {
   id: string,
   unitId: string | null
   quality: 'inexpierienced' | 'regular' | 'veteran' | null,
   upgrades: ArmyUpgrade[],
+  properties: ArmyProperty[],
   models: number
 }
 
@@ -39,7 +46,6 @@ export const useArmyStore = defineStore('army', () => {
         // base cost
         let total = def.quality[u.quality] || 0
 
-        // ⭐ upgrades
         for (const up of u.upgrades) {
           const opt = def.options.find(o => o.id === up.upgradeId)
           if (!opt) continue
@@ -48,6 +54,19 @@ export const useArmyStore = defineStore('army', () => {
           const cost = opt[key] || 0
 
           total += cost * up.count
+        }
+
+        const modelCount = getUnitModelCount(u)
+
+        for (const prop of u.properties) {
+          if (!prop.selected) continue
+
+          const defProp = def.upgrades.find(p => p.id === prop.propertyId)
+          if (!defProp) continue
+
+          const costPerModel = defProp.costPerUnit || 0
+
+          total += costPerModel * modelCount
         }
 
         return sum + total
@@ -103,6 +122,7 @@ export const useArmyStore = defineStore('army', () => {
     if (!unitId) {
       unit.quality = null
       unit.upgrades = []
+      unit.properties = []
       return
     }
 
@@ -117,6 +137,11 @@ export const useArmyStore = defineStore('army', () => {
     unit.upgrades = def.options.map(opt => ({
       upgradeId: opt.id,
       count: 0
+    }))
+
+    unit.properties = (def.upgrades || []).map(p => ({
+      propertyId: p.id,
+      selected: false
     }))
   }
   function setUpgradeCount(
@@ -168,6 +193,24 @@ function getUnitModelCount(unit: ArmyUnit): number {
   return total
 }
 
+function toggleProperty(
+  platoonId: string,
+  armyUnitId: string,
+  propertyId: string,
+  selected: boolean
+) {
+  const platoon = platoons.value.find(p => p.id === platoonId)
+  if (!platoon) return
+
+  const unit = platoon.units.find(u => u.id === armyUnitId)
+  if (!unit) return
+
+  const prop = unit.properties.find(p => p.propertyId === propertyId)
+  if (!prop) return
+
+  prop.selected = selected
+}
+
   return {
     factionId,
     platoons,
@@ -179,6 +222,7 @@ function getUnitModelCount(unit: ArmyUnit): number {
     setUnit,
     setQuality,
     setUpgradeCount,
-    getUnitModelCount
+    getUnitModelCount,
+    toggleProperty
   }
 })

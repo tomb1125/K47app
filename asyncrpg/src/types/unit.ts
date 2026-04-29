@@ -15,10 +15,18 @@ export interface Unit {
   }
   models: number
   upgrades: ArmyUpgrade[]
+  properties: ArmyProperty[]
 }
 
 export interface ArmyUpgrade {
   upgradeId: string
   count: number
   addModels?: number
+}
+
+
+export interface ArmyProperty {
+  propertyId: string
+  selected: boolean
+  costPerUnit: number
 }

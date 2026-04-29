@@ -46,6 +46,9 @@ function setCheckbox(upgradeId: string, checked: boolean) {
     checked ? 1 : 0
   )
 }
+const properties = computed(() =>
+  selectedDefinition.value?.upgrades || []
+)
 
 function setNumber(upgradeId: string, value: string) {
   const count = parseInt(value) || 0
@@ -55,6 +58,19 @@ function setNumber(upgradeId: string, value: string) {
     props.unit.id,
     upgradeId,
     count
+  )
+}
+
+function isPropertySelected(propertyId: string) {
+  return props.unit.properties.find(p => p.propertyId === propertyId)?.selected || false
+}
+
+function toggle(propertyId: string, selected: boolean) {
+  armyStore.toggleProperty(
+    props.platoonId,
+    props.unit.id,
+    propertyId,
+    selected
   )
 }
 </script>
@@ -124,6 +140,20 @@ function setNumber(upgradeId: string, value: string) {
         </label>
       </div>
 
+    </div>
+  </div>
+  <div v-if="properties.length > 0">
+    <h4>Properties</h4>
+
+    <div v-for="prop in properties" :key="prop.id">
+      <label>
+        <input
+          type="checkbox"
+          :checked="isPropertySelected(prop.id)"
+          @change="e => toggle(prop.id, e.target.checked)"
+        />
+        {{ prop.name }}
+      </label>
     </div>
   </div>
 </template>
