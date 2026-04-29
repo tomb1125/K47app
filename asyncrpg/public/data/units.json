@@ -30,6 +30,91 @@
           "costPerUnit": 2
         }
       ]
+    },
+    {
+      "id": "infantry_squad",
+      "name": "Infantry Squad",
+      "factionId": "cmn",
+
+      "models": 6,
+
+      "quality": {
+        "inexperienced": 42,
+        "regular": 60,
+        "veteran": 78
+      },
+
+      "options": [
+        {
+          "id": "additional_soldiers",
+          "name": "Additional Soldiers (No Mixed Quality)",
+          "cost-inexperienced": 7,
+          "cost-regular": 10,
+          "cost-veteran": 13,
+          "addModels": 1,
+          "limit": 6
+        },
+        {
+          "id": "smg",
+          "name": "Replace Rifle with SMG",
+          "cost": 4,
+          "limit": 12
+        },
+        {
+          "id": "assault_rifle",
+          "name": "Replace Rifle with Assault Rifle",
+          "cost": 6,
+          "limit": 12
+        },
+        {
+          "id": "rifle_grenades",
+          "name": "Upgrade Rifle with Rifle Grenades",
+          "cost": 6,
+          "limit": 3
+        },
+        {
+          "id": "lmg",
+          "name": "Replace Rifle with LMG",
+          "cost": 15,
+          "limit": 2
+        },
+        {
+          "id": "flamethrower",
+          "name": "Replace Rifle with Infantry Flamethrower",
+          "cost": 30,
+          "limit": 1,
+          "requires": ["engineers"]
+        }
+      ],
+
+      "upgrades": [
+        {
+          "id": "priams",
+          "name": "PRIAMs",
+          "costPerUnit": 5
+        },
+        {
+          "id": "anti_tank_grenades",
+          "name": "Anti-tank Grenades",
+          "costPerUnit": 2
+        },
+        {
+          "id": "stubborn",
+          "name": "Stubborn",
+          "costPerUnit": 1
+        },
+        {
+          "id": "engineers",
+          "name": "Engineers",
+          "costPerUnit": 1
+        },
+        {
+          "id": "shirkers",
+          "name": "Shirkers",
+          "costPerUnit": -2,
+          "condition": "inexperienced_only"
+        }
+      ]
     }
   ]
 }

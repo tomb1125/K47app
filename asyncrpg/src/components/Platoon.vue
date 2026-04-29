@@ -25,7 +25,7 @@ const store = useArmyStore()
 <style scoped>
 .platoon {
   border: 2px solid #888;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 2px;
+  margin: 2px 0;
 }
 </style>

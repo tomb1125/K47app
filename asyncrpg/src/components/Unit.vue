@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useArmyStore } from '@/stores/armyStore'
 import { useUnitStore } from '@/stores/unitStore'
 import { storeToRefs } from 'pinia'
+import type { Unit } from '@/types/unit';
 
 const props = defineProps<{
   platoonId: string
@@ -49,6 +50,27 @@ function setCheckbox(upgradeId: string, checked: boolean) {
 const properties = computed(() =>
   selectedDefinition.value?.upgrades || []
 )
+
+function formatUpgradeCost(unit: Unit, opt: any) {
+  if (!unit.quality) return ''
+
+  const key = `cost-${unit.quality}`
+  const cost = opt[key] ?? opt.cost ?? 0
+
+  return cost > 0 ? `+${cost}` : `${cost}`
+}
+
+function formatPropertyCost(propertyId: string) {
+  const def = selectedDefinition.value
+  if (!def) return ''
+
+  const prop = def.upgrades.find(p => p.id === propertyId)
+  if (!prop) return ''
+
+  const cost = prop.costPerUnit || 0
+
+  return cost > 0 ? `+${cost}/model` : `${cost}/model`
+}
 
 function setNumber(upgradeId: string, value: string) {
   const count = parseInt(value) || 0
@@ -111,56 +133,113 @@ function toggle(propertyId: string, selected: boolean) {
   <div>
     Number of models: {{armyStore.getUnitModelCount(unit)}}
   </div>
-  <div v-if="upgrades.length > 0">
-    <div v-for="opt in upgrades" :key="opt.id">
+<div v-if="upgrades.length > 0" class="section">
+  <h4>Upgrades</h4>
 
-      <!-- SINGLE (checkbox) -->
-      <div v-if="!opt.limit || opt.limit === 1">
-        <label>
-          <input
-            type="checkbox"
-            :checked="getUpgradeCount(opt.id) > 0"
-            @change="e => setCheckbox(opt.id, e.target.checked)"
-          />
-          {{ opt.name }}
-        </label>
+  <div class="grid">
+    <template v-for="opt in upgrades" :key="opt.id">
+
+      <!-- LABEL -->
+      <div class="label">
+        {{ opt.name }}
       </div>
 
-      <!-- MULTIPLE (number input) -->
-      <div v-else>
-        <label>
-          {{ opt.name }}
-          <input
-            type="number"
-            min="0"
-            :max="opt.limit"
-            :value="getUpgradeCount(opt.id)"
-            @input="e => setNumber(opt.id, e.target.value)"
-          />
-        </label>
+      <!-- COST -->
+      <div class="cost">
+        {{ formatUpgradeCost(unit, opt) }}
       </div>
 
-    </div>
+      <!-- INPUT -->
+      <div class="input">
+        <!-- SINGLE -->
+        <input
+          v-if="!opt.limit || opt.limit === 1"
+          type="checkbox"
+          :checked="getUpgradeCount(opt.id) > 0"
+          @change="e => setCheckbox(opt.id, e.target.checked)"
+        />
+
+        <!-- MULTIPLE -->
+        <input
+          v-else
+          type="number"
+          min="0"
+          :max="opt.limit"
+          :value="getUpgradeCount(opt.id)"
+          @input="e => setNumber(opt.id, e.target.value)"
+        />
+      </div>
+
+    </template>
   </div>
-  <div v-if="properties.length > 0">
-    <h4>Properties</h4>
+</div>
 
-    <div v-for="prop in properties" :key="prop.id">
-      <label>
+
+<div v-if="properties.length > 0" class="section">
+  <h4>Properties</h4>
+
+  <div class="grid">
+    <template v-for="prop in properties" :key="prop.id">
+
+      <!-- LABEL -->
+      <div class="label">
+        {{ prop.name }}
+      </div>
+
+      <!-- COST -->
+      <div class="cost">
+        {{ formatPropertyCost(prop.id) }}
+      </div>
+
+      <!-- INPUT -->
+      <div class="input">
         <input
           type="checkbox"
           :checked="isPropertySelected(prop.id)"
           @change="e => toggle(prop.id, e.target.checked)"
         />
-        {{ prop.name }}
-      </label>
-    </div>
+      </div>
+
+    </template>
   </div>
+</div>
 </template>
 <style scoped>
 .unit {
   border: 2px solid #888;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 2px;
+  margin: 2px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr auto min-content;
+  gap: 6px 12px;
+  align-items: center;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .label {
+    font-weight: 500;
+  }
+
+  .cost,
+  .input {
+    display: inline-block;
+  }
+
+  .cost {
+    margin-right: 10px;
+  }
+
+  .input {
+    float: right;
+  }
 }
 </style>

@@ -51,7 +51,7 @@ export const useArmyStore = defineStore('army', () => {
           if (!opt) continue
 
           const key = `cost-${u.quality}`
-          const cost = opt[key] || 0
+          const cost = opt[key] || opt.cost
 
           total += cost * up.count
         }

@@ -16,9 +16,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="app">
     <h1>Army Builder</h1>
-    <div>
+    <div class="top-bar">
       Total Points: {{ totalPoints }}
     </div>
     <!-- Faction selector -->
@@ -35,3 +35,18 @@ onMounted(() => {
     <Configurator />
   </div>
 </template>
+
+
+<style scoped>
+.app {
+  border: 2px solid #888;
+  padding: 2px;
+  margin: 2px 0;
+}
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+}
+</style>
