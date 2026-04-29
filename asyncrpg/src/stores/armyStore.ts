@@ -5,13 +5,15 @@ import { useUnitStore } from './unitStore'
 
 export interface ArmyUpgrade {
   upgradeId: string
-  count: number
+  count: number,
+  addModels?: number
 }
 export interface ArmyUnit {
   id: string,
   unitId: string | null
   quality: 'inexpierienced' | 'regular' | 'veteran' | null,
-  upgrades: ArmyUpgrade[]
+  upgrades: ArmyUpgrade[],
+  models: number
 }
 
 export interface Platoon {
@@ -144,6 +146,28 @@ function setQuality(platoonId: string, unitId: string, quality: ArmyUnit['qualit
     unit.quality = quality
   }
 
+function getUnitModelCount(unit: ArmyUnit): number {
+  const unitStore = useUnitStore()
+
+  if (!unit.unitId) return 0
+
+  const def = unitStore.units.find(u => u.id === unit.unitId)
+  if (!def) return 0
+
+  let total = def.models || 0
+
+  // add models from upgrades/options
+  for (const up of unit.upgrades) {
+    const opt = def.options.find(o => o.id === up.upgradeId)
+    if (!opt) continue
+
+    const add = opt.addModels || 0
+    total += add * up.count
+  }
+
+  return total
+}
+
   return {
     factionId,
     platoons,
@@ -154,6 +178,7 @@ function setQuality(platoonId: string, unitId: string, quality: ArmyUnit['qualit
     removeUnit,
     setUnit,
     setQuality,
-    setUpgradeCount
+    setUpgradeCount,
+    getUnitModelCount
   }
 })

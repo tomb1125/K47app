@@ -92,7 +92,9 @@ function setNumber(upgradeId: string, value: string) {
     </button>
 
   </div>
-
+  <div>
+    Number of models: {{armyStore.getUnitModelCount(unit)}}
+  </div>
   <div v-if="upgrades.length > 0">
     <div v-for="opt in upgrades" :key="opt.id">
 

@@ -6,6 +6,7 @@
     { "id": "galahad", 
       "name": "GALAHAD ARMOURED INFANTRY SQUAD",
       "factionId": "cmn",
+      "models": 4,
       "quality": {
         "regular": 120,
         "veteran": 133
@@ -16,10 +17,12 @@
           "name": "Additional Soldiers in Grade 1 Powered Armour (No Mixed Quality)",
           "cost-regular": 30,
           "cost-veteran": 33,
+          "addModels": 1,
           "limit": 6
 
         }
       ],
+        
       "upgrades":[
 
       ]

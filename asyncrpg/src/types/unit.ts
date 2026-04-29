@@ -13,4 +13,12 @@ export interface Unit {
     regular: number
     veteran: number
   }
+  models: number
+  upgrades: ArmyUpgrade[]
+}
+
+export interface ArmyUpgrade {
+  upgradeId: string
+  count: number
+  addModels?: number
 }
