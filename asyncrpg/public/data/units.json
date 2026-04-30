@@ -3,34 +3,6 @@
     { "id": "cmn", "name": "British Commonwealth" }
   ],
   "units": [
-    { "id": "galahad", 
-      "name": "GALAHAD ARMOURED INFANTRY SQUAD",
-      "factionId": "cmn",
-      "models": 4,
-      "quality": {
-        "regular": 120,
-        "veteran": 133
-      },
-      "options": [
-        {
-          "id": "additionalsoldiers",
-          "name": "Additional Soldiers",
-          "cost-regular": 30,
-          "cost-veteran": 33,
-          "addModels": 1,
-          "limit": 6
-
-        }
-      ],
-        
-      "upgrades":[
-        {
-          "id": "AntiTankGrenades",
-          "name" : "Anti-tank Grenades",
-          "costPerUnit": 2
-        }
-      ]
-    },
     {
       "id": "infantry_squad",
       "name": "Infantry Squad",
@@ -48,9 +20,9 @@
         {
           "id": "additional_soldiers",
           "name": "Additional Soldiers (No Mixed Quality)",
-          "cost-inexperienced": 7,
-          "cost-regular": 10,
-          "cost-veteran": 13,
+          "costInexperienced": 7,
+          "costRegular": 10,
+          "costVeteran": 13,
           "addModels": 1,
           "limit": 6
         },
@@ -115,6 +87,279 @@
           "condition": "inexperienced_only"
         }
       ]
+    },
+{
+  "id": "company_commander",
+  "name": "Company Commander – Officer",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistols",
+      "name": "Additional Soldiers with Pistols (No Mixed Quality)",
+      "costInexperienced": 6,
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "assault_rifle",
+      "name": "Replace Pistol with Assault Rifle",
+      "cost": 7,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "rift_mastery",
+      "name": "Rift Mastery",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
     }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "PRIAMs",
+      "costPerUnit": 5
+    }
+  ]
+},
+{
+  "id": "company_commander_galahad",
+  "name": "Company Commander – Officer in Galahad Heavy Armour",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "regular": 80,
+    "veteran": 98
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_galahad",
+      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
+      "costRegular": 30,
+      "costVeteran": 33,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "heavy_tesla_rifle",
+      "name": "Replace LMG with Heavy Tesla Rifle",
+      "cost": -5,
+      "limit": 1
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "rift_mastery",
+      "name": "Rift Mastery",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "PRIAMs",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    },
+    {
+      "id": "stubborn",
+      "name": "Stubborn",
+      "costPerUnit": 1
+    },
+    {
+      "id": "tough_fighters",
+      "name": "Tough Fighters",
+      "costPerUnit": 1
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "heavy",
+      "name": "Heavy"
+    },
+    {
+      "id": "rift_unit",
+      "name": "Rift Unit",
+      "condition": "heavy_tesla_rifle"
+    }
+  ]
+},
+{
+  "id": "platoon_commander",
+  "name": "Platoon Commander – Officer",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistols",
+      "name": "Additional Soldiers armed with Pistols (No Mixed Quality)",
+      "costInexperienced": 6,
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "assault_rifle",
+      "name": "Replace Pistol with Assault Rifle",
+      "cost": 7,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "rift_mastery",
+      "name": "Rift Mastery",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "PRIAMs",
+      "costPerUnit": 5
+    }
+  ]
+},
+{
+  "id": "platoon_commander",
+  "name": "Platoon Commander – Officer",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistols",
+      "name": "Additional Soldiers armed with Pistols (No Mixed Quality)",
+      "costInexperienced": 6,
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "assault_rifle",
+      "name": "Replace Pistol with Assault Rifle",
+      "cost": 7,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "rift_mastery",
+      "name": "Rift Mastery",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "PRIAMs",
+      "costPerUnit": 5
+    }
+  ]
+}
   ]
 }

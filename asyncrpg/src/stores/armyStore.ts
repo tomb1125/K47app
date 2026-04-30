@@ -50,8 +50,13 @@ export const useArmyStore = defineStore('army', () => {
           const opt = def.options.find(o => o.id === up.upgradeId)
           if (!opt) continue
 
-          const key = `cost-${u.quality}`
-          const cost = opt[key] || opt.cost
+          const costMap = {
+            inexperienced: opt.costInexperienced,
+            regular: opt.costRegular,
+            veteran: opt.costVeteran
+          }
+
+          const cost = costMap[u.quality] ?? opt.cost ?? 0
 
           total += cost * up.count
         }
@@ -74,7 +79,7 @@ export const useArmyStore = defineStore('army', () => {
   })
   // ➕ add platoon
   function addPlatoon() {
-    platoons.value.push({
+    platoons.value.unshift({
       id: crypto.randomUUID(),
       units: []
     })
@@ -96,7 +101,7 @@ export const useArmyStore = defineStore('army', () => {
       quality: 'regular' // default
     };
 
-    platoon.units.push(unit)
+    platoon.units.unshift(unit)
 
     
   }
