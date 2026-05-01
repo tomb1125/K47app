@@ -5,7 +5,7 @@
   "units": [
     {
       "id": "infantry_squad",
-      "name": "Infantry Squad",
+      "name": "Rifle Squad",
       "factionId": "cmn",
 
       "models": 6,
@@ -295,6 +295,1220 @@
       "costPerUnit": 5
     }
   ]
-}
+},
+{
+  "id": "platoon_commander_galahad",
+  "name": "Platoon Commander – Officer in Galahad Heavy Armour",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "regular": 50,
+    "veteran": 59
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_galahad",
+      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour armed with LMGs (No Mixed Quality)",
+      "costRegular": 30,
+      "costVeteran": 33,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "heavy_tesla_rifle",
+      "name": "Replace LMG with Heavy Tesla Rifle",
+      "cost": -5,
+      "limit": 1
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "rift_mastery",
+      "name": "Rift Mastery",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "PRIAMs",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    },
+    {
+      "id": "stubborn",
+      "name": "Stubborn",
+      "costPerUnit": 1
+    },
+    {
+      "id": "tough_fighters",
+      "name": "Tough Fighters",
+      "costPerUnit": 1
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "heavy",
+      "name": "Heavy"
+    },
+    {
+      "id": "rift_unit",
+      "name": "Rift Unit",
+      "condition": "heavy_tesla_rifle"
+    }
+  ]
+},
+{
+  "id": "medic",
+  "name": "Medic",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "veteran": 30
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistol",
+      "name": "Additional Soldiers armed with Pistols",
+      "cost": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_rifle",
+      "name": "Replace Pistol with Rifle (additional soldiers only)",
+      "cost": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_smg",
+      "name": "Replace Pistol with SMG (additional soldiers only)",
+      "cost": 5,
+      "limit": 2
+    },
+    {
+      "id": "replace_assault_rifle",
+      "name": "Replace Pistol with Assault Rifle (additional soldiers only)",
+      "cost": 7,
+      "limit": 2
+    }
+  ],
+
+  "upgrades": [],
+
+  "rules": [
+    {
+      "id": "medic",
+      "name": "Medic"
+    }
+  ]
+},
+{
+  "id": "artillery_forward_observer",
+  "name": "Artillery Forward Observer",
+  "factionId": "cmn",
+
+  "models": 1,
+
+  "quality": {
+    "regular": 75,
+    "veteran": 90
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistol",
+      "name": "Additional Soldiers armed with Pistols",
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "replace_smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "replace_assault_rifle",
+      "name": "Replace Pistol with Assault Rifle",
+      "cost": 7,
+      "limit": 3
+    }
+  ],
+
+  "upgrades": [],
+
+  "rules": [
+    {
+      "id": "infiltrator",
+      "name": "Infiltrator"
+    }
+  ]
+},
+    {
+      "id": "infantry_squad",
+      "name": "Rifle Squad",
+      "factionId": "cmn",
+
+      "models": 6,
+
+      "quality": {
+        "inexperienced": 42,
+        "regular": 60,
+        "veteran": 78
+      },
+
+      "options": [
+        {
+          "id": "additional_soldiers",
+          "name": "Additional Soldiers (No Mixed Quality)",
+          "costInexperienced": 7,
+          "costRegular": 10,
+          "costVeteran": 13,
+          "addModels": 1,
+          "limit": 6
+        },
+        {
+          "id": "smg",
+          "name": "Replace Rifle with SMG",
+          "cost": 4,
+          "limit": 12
+        },
+        {
+          "id": "assault_rifle",
+          "name": "Replace Rifle with Assault Rifle",
+          "cost": 6,
+          "limit": 12
+        },
+        {
+          "id": "rifle_grenades",
+          "name": "Upgrade Rifle with Rifle Grenades",
+          "cost": 6,
+          "limit": 3
+        },
+        {
+          "id": "lmg",
+          "name": "Replace Rifle with LMG",
+          "cost": 15,
+          "limit": 2
+        },
+        {
+          "id": "flamethrower",
+          "name": "Replace Rifle with Infantry Flamethrower",
+          "cost": 30,
+          "limit": 1,
+          "requires": ["engineers"]
+        }
+      ],
+
+      "upgrades": [
+        {
+          "id": "priams",
+          "name": "PRIAMs",
+          "costPerUnit": 5
+        },
+        {
+          "id": "anti_tank_grenades",
+          "name": "Anti-tank Grenades",
+          "costPerUnit": 2
+        },
+        {
+          "id": "stubborn",
+          "name": "Stubborn",
+          "costPerUnit": 1
+        },
+        {
+          "id": "engineers",
+          "name": "Engineers",
+          "costPerUnit": 1
+        },
+        {
+          "id": "shirkers",
+          "name": "Shirkers",
+          "costPerUnit": -2,
+          "condition": "inexperienced_only"
+        }
+      ]
+    },
+  {
+    "id": "galahad_armoured_infantry",
+    "name": "Galahad Armoured Infantry Squad",
+    "factionId": "cmn",
+
+    "models": 4,
+
+    "quality": {
+      "regular": 120,
+      "veteran": 132
+    },
+
+    "options": [
+      {
+        "id": "additional_soldiers",
+        "name": "Additional Soldiers in Grade 1 Powered Armour (No Mixed Quality)",
+        "costRegular": 30,
+        "costVeteran": 33,
+        "addModels": 1,
+        "limit": 6
+      }
+    ],
+
+    "upgrades": [
+      {
+        "id": "priams",
+        "name": "PRIAMs",
+        "costPerUnit": 5
+      },
+      {
+        "id": "anti_tank_grenades",
+        "name": "Anti-tank Grenades",
+        "costPerUnit": 2
+      },
+      {
+        "id": "engineers",
+        "name": "Engineers",
+        "costPerUnit": 1
+      },
+      {
+        "id": "stubborn",
+        "name": "Stubborn",
+        "costPerUnit": 1
+      },
+      {
+        "id": "tough_fighters",
+        "name": "Tough Fighters",
+        "costPerUnit": 1
+      }
+    ]
+  },
+  {
+    "id": "italian_bersaglieri",
+    "name": "Italian Bersaglieri Squad",
+    "factionId": "cmn",
+
+    "models": 4,
+
+    "quality": {
+      "veteran": 136
+    },
+
+    "options": [
+      {
+        "id": "additional_soldiers",
+        "name": "Additional Soldiers in Grade 1 Powered Armour",
+        "costVeteran": 34,
+        "addModels": 1,
+        "limit": 4
+      }
+    ],
+
+    "upgrades": [
+      {
+        "id": "anti_tank_grenades",
+        "name": "Anti-tank Grenades",
+        "costPerUnit": 2
+      }
+    ]
+  },
+  {
+    "id": "mk1_automated_infantry",
+    "name": "Mk I Automated Infantry",
+    "factionId": "cmn",
+
+    "models": 5,
+
+    "quality": {
+      "veteran": 175
+    },
+
+    "options": [
+      {
+        "id": "additional_automatons",
+        "name": "Additional Mk I Automated Infantry",
+        "costVeteran": 35,
+        "addModels": 1,
+        "limit": 5
+      }
+    ],
+
+    "upgrades": [
+      {
+        "id": "hmg_upgrade",
+        "name": "Replace MMGs with HMGs",
+        "costPerUnit": 10
+      }
+    ]
+  },
+
+  {
+    "id": "mk2_heavy_automated_infantry",
+    "name": "MK II Heavy Automated Infantry",
+    "factionId": "cmn",
+
+    "models": 2,
+
+    "quality": {
+      "veteran": 126
+    },
+
+    "options": [
+      {
+        "id": "additional_mk2",
+        "name": "Additional Mk II Heavy Automated Infantry",
+        "cost": 63,
+        "addModels": 1,
+        "limit": 2
+      },
+      {
+        "id": "heavy_cannon_upgrade",
+        "name": "Replace Light Automatic Cannon with Heavy Automatic Cannon",
+        "cost": 10,
+        "limit": 1
+      }
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "british_grenadiers",
+    "name": "British Grenadiers",
+    "factionId": "cmn",
+
+    "models": 5,
+
+    "quality": {
+      "veteran": 95
+    },
+
+    "options": [
+      {
+        "id": "additional_grenadiers",
+        "name": "Additional Grenadiers",
+        "cost": 19,
+        "addModels": 1,
+        "limit": 5
+      },
+      {
+        "id": "heavy_tesla_rifle",
+        "name": "Replace Assault Rifle with Heavy Tesla Rifle",
+        "cost": 4,
+        "limit": 1
+      },
+      {
+        "id": "rifle_grenades",
+        "name": "Upgrade Assault Rifle with Rifle Grenades",
+        "cost": 6,
+        "limit": 3
+      }
+    ],
+
+    "upgrades": [
+      {
+        "id": "anti_tank_grenades",
+        "name": "Anti-tank Grenades",
+        "costPerUnit": 2
+      }
+    ]
+  },
+  {
+    "id": "cerberus_squad",
+    "name": "Cerberus Squad",
+    "factionId": "cmn",
+
+    "models": 4,
+
+    "quality": {
+      "veteran": 107
+    },
+
+    "options": [
+      {
+        "id": "additional_handler",
+        "name": "Additional Handler with Pistol",
+        "cost": 26,
+        "addModels": 1,
+        "limit": 2
+      },
+      {
+        "id": "additional_war_dogs",
+        "name": "Additional War Dogs",
+        "cost": 27,
+        "addModels": 1,
+        "limit": 6
+      }
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "mmg_team",
+    "name": "MMG Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 35,
+      "regular": 50,
+      "veteran": 65
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "hmg_team",
+    "name": "HMG Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 49,
+      "regular": 70,
+      "veteran": 91
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "lancer",
+    "name": "Automated Mobile Platform ‘Lancer’",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 99
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "piat_team",
+    "name": "PIAT Team",
+    "factionId": "cmn",
+
+    "models": 2,
+
+    "quality": {
+      "inexperienced": 28,
+      "regular": 40,
+      "veteran": 52
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "super_bazooka_team",
+    "name": "Super Bazooka Team",
+    "factionId": "cmn",
+
+    "models": 2,
+
+    "quality": {
+      "inexperienced": 56,
+      "regular": 80,
+      "veteran": 104
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "hunter",
+    "name": "Automated Mobile Platform ‘Hunter’",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 84
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "sniper_team",
+    "name": "Sniper Team",
+    "factionId": "cmn",
+
+    "models": 2,
+
+    "quality": {
+      "regular": 52,
+      "veteran": 67
+    },
+
+    "options": [
+    {
+      "id": "at_rifle",
+      "name": "Replace the Team Leader’s Rifle with an Anti-tank Rifle",
+      "cost": 15,
+      "limit": 1
+    },
+    {
+      "id": "rifle",
+      "name": "Replace the Assistant's Pistol with a Rifle",
+      "cost": 1,
+      "limit": 1
+    },
+    {
+      "id": "smg",
+      "name": "Replace the Assistant's Pistol with an SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "assault_rifle",
+      "name": "Replace the Assistant's Pistol with an Assault Rifle",
+      "cost": 7,
+      "limit": 3
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "light_mortar",
+    "name": "Light Mortar Team",
+    "factionId": "cmn",
+
+    "models": 2,
+
+    "quality": {
+      "inexperienced": 21,
+      "regular": 30,
+      "veteran": 39
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "medium_mortar",
+    "name": "Medium Mortar Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 32,
+      "regular": 45,
+      "veteran": 59
+    },
+
+    "options": [
+    {
+      "id": "spotter",
+      "name": "If taken as Regular or Veteran, may take a Spotter",
+      "cost": 10,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "heavy_mortar",
+    "name": "Heavy Mortar Team",
+    "factionId": "cmn",
+
+    "models": 4,
+
+    "quality": {
+      "inexperienced": 42,
+      "regular": 60,
+      "veteran": 78
+    },
+
+    "options": [
+    {
+      "id": "spotter",
+      "name": "If taken as Regular or Veteran, may take a Spotter",
+      "cost": 10,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "bombardier",
+    "name": "Automated Mobile Platform ‘Bombardier’",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 84
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "flamer",
+    "name": "Flamethrower Team",
+    "factionId": "cmn",
+
+    "models": 2,
+
+    "quality": {
+      "regular": 50,
+      "veteran": 65
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "light_artilery",
+    "name": "Light Artillery Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 32,
+      "regular": 45,
+      "veteran": 59
+    },
+
+    "options": [
+    {
+      "id": "gun_shield",
+      "name": "Add a Gun Shield",
+      "cost": 5,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "medium_artilery",
+    "name": "Medium Artillery Team",
+    "factionId": "cmn",
+
+    "models": 4,
+
+    "quality": {
+      "inexperienced": 60,
+      "regular": 85,
+      "veteran": 111
+    },
+
+    "options": [
+    {
+      "id": "spotter",
+      "name": "If taken as Regular or Veteran, may take a Spotter",
+      "cost": 10,
+      "limit": 1
+    },
+    {
+      "id": "spotter",
+      "name": "Add a Gun Shield",
+      "cost": 5,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "heavy_artilery",
+    "name": "Heavy Artillery Team",
+    "factionId": "cmn",
+
+    "models": 5,
+
+    "quality": {
+      "inexperienced": 95,
+      "regular": 135,
+      "veteran": 176
+    },
+
+    "options": [
+    {
+      "id": "spotter",
+      "name": "If taken as Regular or Veteran, may take a Spotter",
+      "cost": 10,
+      "limit": 1
+    },
+    {
+      "id": "spotter",
+      "name": "Add a Gun Shield",
+      "cost": 5,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "light_at",
+    "name": "Light Anti Tank Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 35,
+      "regular": 50,
+      "veteran": 65
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "medium_at",
+    "name": "Medium Anti Tank Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 49,
+      "regular": 70,
+      "veteran": 91
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "heavy_at",
+    "name": "Heavy Anti Tank Team",
+    "factionId": "cmn",
+
+    "models": 4,
+
+    "quality": {
+      "inexperienced": 70,
+      "regular": 100,
+      "veteran": 130
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "super_heavy_at",
+    "name": "Super Heavy Anti Tank Team",
+    "factionId": "cmn",
+
+    "models": 5,
+
+    "quality": {
+      "inexperienced": 98,
+      "regular": 140,
+      "veteran": 182
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "tesla_cannon",
+    "name": "M17 Tesla Cannon Team",
+    "factionId": "cmn",
+
+    "models": 3,
+
+    "quality": {
+      "inexperienced": 88,
+      "regular": 125,
+      "veteran": 163
+    },
+
+    "options": [
+    {
+      "id": "galahad",
+      "name": "If taken as Regular or Veteran, upgrade entire crew to wear Grade 1 Galahad Powered Armour",
+      "cost": 15,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "guardianmk1",
+    "name": "Guardian MK I Light Walker",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "regular": 105,
+      "veteran": 126
+    },
+
+    "options": [
+    {
+      "id": "flamer",
+      "name": "Add an Infantry Flamethrower, mounted to the Left Arm",
+      "cost": 30,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "jackal",
+    "name": "Jackal MK I Light Jump Walker",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "regular": 105,
+      "veteran": 126
+    },
+
+    "options": [
+    {
+      "id": "flamer",
+      "name": "Add an Infantry Flamethrower, mounted to the Left Arm",
+      "cost": 30,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "mudskipper",
+    "name": "Jackal MK I Light Jump Walker",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "regular": 290,
+      "veteran": 348
+    },
+
+    "options": [
+    {
+      "id": "flamer",
+      "name": "Replace Arm-mounted HMG with Arm-mounted Bazooka",
+      "cost": 5,
+      "limit": 2
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "percival",
+    "name": "Percival Medium Assault Walker",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 388
+    },
+
+    "options": [
+
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "hornet",
+    "name": "Hornet Medium Support Walker",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "regular": 235,
+      "veteran": 282
+    },
+
+    "options": [
+    {
+      "id": "systems",
+      "name": "If taken as Veteran, add Computational Systems special rule",
+      "cost": 15,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "merlin",
+    "name": "Merlin Heavy Walker",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 438
+    },
+
+    "options": [
+
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "cromwell",
+    "name": "Cromwell-T Cruiser Tank",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 216,
+      "regular": 270,
+      "veteran": 324
+    },
+
+    "options": [
+    {
+      "id": "replace1",
+      "name": "Replace Turret-mounted M17 Tesla Cannon with Medium Anti-tank Gun and Co-axial MMG – – Improved HE (Instead of HE (1\"), the Medium Anti-Tank Gun has HE (2\"))",
+      "cost": -40,
+      "limit": 1
+    },
+    {
+      "id": "tesla",
+      "name": "Replace Turret-mounted M17 Tesla Cannon with Medium Howitzer and Co-axial MMG",
+      "cost": -35,
+      "limit": 1
+    },
+    {
+      "id": "mmg",
+      "name": "Add a Pintle-mounted MMG (cannot take with HMG)",
+      "cost": 15,
+      "limit": 1
+    },
+    {
+      "id": "hmg",
+      "name": "Add a Pintle-mounted HMG (cannot take with MMG)",
+      "cost": 25,
+      "limit": 1
+    },
+    {
+      "id": "systems",
+      "name": "If taken as Veteran, add Computational Systems special rule",
+      "cost": 15,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "meteor",
+    "name": "Churchil Meteor Tank",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 364,
+      "regular": 455,
+      "veteran": 546
+    },
+
+    "options": [
+    {
+      "id": "tesla",
+      "name": "Replace Turret-mounted Medium Anti Tank Gun with Medium Howitzer and Co-axial MMG",
+      "cost": -35,
+      "limit": 1
+    },
+    {
+      "id": "mmg",
+      "name": "Replace Forward-facing MMG with Vehicle Flamethrower",
+      "cost": 40,
+      "limit": 1
+    }],
+
+    "upgrades": []
+  },
+  {
+    "id": "teslaCannonEmplacement",
+    "name": "M17 Tesla Cannon Emplacement",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 168,
+      "regular": 210,
+      "veteran": 252
+    },
+
+    "options": [
+
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "automatedCarrier",
+    "name": "Automated Carrier",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 158
+    },
+
+    "options": [
+
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "humber",
+    "name": "Humber Armoured Car MK II",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 96,
+      "regular": 120,
+      "veteran": 144
+    },
+
+    "options": [
+      {
+        "id": "mmg",
+        "name": " Replace Turret-mounted Twin Light Automatic Cannons with Light Automatic Cannon and Co-Axial MMG",
+        "cost": -25,
+        "limit": 1
+      },
+      {
+        "id": "at",
+        "name": " Replace Turret-mounted Twin Light Automatic Cannons with Light Anti-tank Gun and Co-axial MMG",
+        "cost": -25,
+        "limit": 1
+      }
+
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "bren",
+    "name": "Bren Carrier",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 40,
+      "regular": 50,
+      "veteran": 60
+    },
+
+    "options": [
+      {
+        "id": "lmg",
+        "name": "Add a Pintle-mounted LMG with 360-degree arc of fire",
+        "cost": 10,
+        "limit": 1
+      },
+      {
+        "id": "at",
+        "name": "Replace Forward-facing LMG with Anti-tank Rifle",
+        "cost": 10,
+        "limit": 1
+      }
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "bredford",
+    "name": "Bredford QLT Troop Transport",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 35,
+      "regular": 44,
+      "veteran": 53
+    },
+
+    "options": [
+      {
+        "id": "lmg",
+        "name": "Add a Pintle-mounted LMG with 360-degree firing arc",
+        "cost": 15,
+        "limit": 1
+      }
+    ],
+
+    "upgrades": []
+  },
+  {
+    "id": "jeep",
+    "name": "Jeep",
+    "factionId": "cmn",
+
+    "models": 1,
+
+    "quality": {
+      "inexperienced": 14,
+      "regular": 18,
+      "veteran": 22
+    },
+
+    "options": [
+    ],
+
+    "upgrades": []
+  }
+
+
   ]
 }
