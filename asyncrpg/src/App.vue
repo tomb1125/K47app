@@ -17,22 +17,26 @@ onMounted(() => {
 
 <template>
   <div class="app">
-    <h1>Army Builder</h1>
+    <!-- Fixed header -->
     <div class="top-bar">
-      Total Points: {{ totalPoints }}
+      <h2>Army Builder</h2>
+      <div>Total Points: {{ totalPoints }}</div>
+
+      <select v-model="selectedFaction">
+        <option
+          v-for="f in factions"
+          :key="f.id"
+          :value="f.id"
+        >
+          {{ f.name }}
+        </option>
+      </select>
     </div>
-    <!-- Faction selector -->
-    <select v-model="selectedFaction">
-      <option
-        v-for="f in factions"
-        :key="f.id"
-        :value="f.id"
-      >
-        {{ f.name }}
-      </option>
-    </select>
- 
-    <Configurator />
+
+    <!-- Scrollable content -->
+    <div class="content">
+      <Configurator />
+    </div>
   </div>
 </template>
 
@@ -45,8 +49,36 @@ onMounted(() => {
 }
 
 .top-bar {
-  position: sticky;
-  top: 0;
   font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 8px;
+  box-sizing: border-box;
+
+  background: #1a1a1a;
+  color: white;
+
+  flex-shrink: 0;
+
+  z-index: 1000;
+}
+
+/* 📜 Main content area */
+.content {
+  margin-top: 85px; /* MUST match top-bar height */
+
+  padding: 8px;
+
+  width: 100%;
+  box-sizing: border-box;
 }
 </style>

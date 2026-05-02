@@ -54,8 +54,13 @@ const properties = computed(() =>
 function formatUpgradeCost(unit: Unit, opt: any) {
   if (!unit.quality) return ''
 
-  const key = `cost-${unit.quality}`
-  const cost = opt[key] ?? opt.cost ?? 0
+  const costMap = {
+    inexperienced: opt.costInexperienced,
+    regular: opt.costRegular,
+    veteran: opt.costVeteran
+  }
+
+  const cost = costMap[unit.quality] ?? opt.cost ?? 0
 
   return cost > 0 ? `+${cost}` : `${cost}`
 }
