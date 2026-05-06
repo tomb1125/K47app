@@ -77,6 +77,21 @@ function formatPropertyCost(propertyId: string) {
   return cost > 0 ? `+${cost}/model` : `${cost}/model`
 }
 
+function formatQualityCost(q: string) {
+  const def = selectedDefinition.value
+  if (!def) return ''
+
+  const costMap = {
+    inexperienced: def.costInexperienced,
+    regular: def.costRegular,
+    veteran: def.costVeteran
+  }
+
+  const cost = def.quality[q];
+
+  return cost > 0 ? ` (+${cost})` : cost < 0 ? ` (${cost})` : ''
+}
+
 function setNumber(upgradeId: string, value: string) {
   const count = parseInt(value) || 0
 
@@ -115,7 +130,7 @@ function toggle(propertyId: string, selected: boolean) {
       :key="q"
       :value="q"
     >
-      {{ q.charAt(0).toUpperCase() + q.slice(1) }}
+      {{ q.charAt(0).toUpperCase() + q.slice(1) }} {{ formatQualityCost(q) }}
     </option>
   </select>
 
