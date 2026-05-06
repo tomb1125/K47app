@@ -2536,7 +2536,7 @@
   },
   {
     "id": "medium_at_jpn",
-    "name": "Medium Anti Tank Team",
+    "name": "Medium Anti Tank Gun Team",
     "factionId": "jpn",
 
     "models": 3,
@@ -2552,311 +2552,118 @@
     "upgrades": []
   },
   {
-    "id": "guardianmk1",
-    "name": "Guardian MK I Light Walker",
-    "factionId": "jpn_TODO",
+    "id": "kehotyp1",
+    "name": "Type 6 KE-HO Light Walker ",
+    "factionId": "jpn",
 
     "models": 1,
 
     "quality": {
-      "regular": 105,
-      "veteran": 126
+      "regular": 95,
+      "veteran": 114
+    },
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "kaikehotyp1",
+    "name": "Type 6-Kai KE-HO Light Walker ",
+    "factionId": "jpn",
+
+    "models": 1,
+
+    "quality": {
+      "regular": 145,
+      "veteran": 175
     },
 
     "options": [
     {
-      "id": "flamer",
-      "name": "Add an Infantry Flamethrower, mounted to the Left Arm",
-      "cost": 30,
+      "id": "shibaru",
+      "name": "Replace Forward-facing Light Anti-tank Gun with Type 61 Light Shiboru Cannon",
+      "cost": 80,
       "limit": 1
     }],
 
     "upgrades": []
   },
   {
-    "id": "jackal",
-    "name": "Jackal MK I Light Jump Walker",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "regular": 105,
-      "veteran": 126
-    },
-
-    "options": [
-    {
-      "id": "flamer",
-      "name": "Add an Infantry Flamethrower, mounted to the Left Arm",
-      "cost": 30,
-      "limit": 1
-    }],
-
-    "upgrades": []
-  },
-  {
-    "id": "mudskipper",
-    "name": "Jackal MK I Light Jump Walker",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "regular": 290,
-      "veteran": 348
-    },
-
-    "options": [
-    {
-      "id": "flamer",
-      "name": "Replace Arm-mounted HMG with Arm-mounted Bazooka",
-      "cost": 5,
-      "limit": 2
-    }],
-
-    "upgrades": []
-  },
-  {
-    "id": "percival",
-    "name": "Percival Medium Assault Walker",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "veteran": 388
-    },
-
-    "options": [
-
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "hornet",
-    "name": "Hornet Medium Support Walker",
-    "factionId": "jpn_TODO",
+    "id": "saasori7",
+    "name": "Type-7 Sasori Light Walker",
+    "factionId": "jpn",
 
     "models": 1,
 
     "quality": {
       "regular": 235,
-      "veteran": 282
+      "veteran": 272
+    },
+
+    "options": [],
+
+    "upgrades": []
+  },
+  {
+    "id": "inago",
+    "name": "Insgo Medium Battle Walker",
+    "factionId": "jpn",
+
+    "models": 1,
+
+    "quality": {
+      "veteran": 294
     },
 
     "options": [
     {
-      "id": "systems",
-      "name": "If taken as Veteran, add Computational Systems special rule",
-      "cost": 15,
+      "id": "recce",
+      "name": "Recce",
+      "cost": 10,
+      "limit": 1
+    },
+    {
+      "id": "attank",
+      "name": "Replace Forward-facing Medium Anti-Tank Gun with Light Rocket System",
+      "cost": -10,
       "limit": 1
     }],
 
     "upgrades": []
+  },{
+  "id": "type_3_kai_shiboru_chi_nu_medium_tank_jpn",
+  "name": "Type 3-Kai Shiboru Chi-Nu Medium Tank",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 220,
+    "regular": 275,
+    "veteran": 330
   },
-  {
-    "id": "merlin",
-    "name": "Merlin Heavy Walker",
-    "factionId": "jpn_TODO",
 
-    "models": 1,
-
-    "quality": {
-      "veteran": 438
-    },
-
-    "options": [
-
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "cromwell",
-    "name": "Cromwell-T Cruiser Tank",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "inexperienced": 216,
-      "regular": 270,
-      "veteran": 324
-    },
-
-    "options": [
+  "options": [
     {
-      "id": "replace1",
-      "name": "Replace Turret-mounted M17 Tesla Cannon with Medium Anti-tank Gun and Co-axial MMG – – Improved HE (Instead of HE (1\"), the Medium Anti-Tank Gun has HE (2\"))",
-      "cost": -40,
-      "limit": 1
-    },
-    {
-      "id": "tesla",
-      "name": "Replace Turret-mounted M17 Tesla Cannon with Medium Howitzer and Co-axial MMG",
-      "cost": -35,
-      "limit": 1
-    },
-    {
-      "id": "mmg",
-      "name": "Add a Pintle-mounted MMG (cannot take with HMG)",
-      "cost": 15,
-      "limit": 1
-    },
-    {
-      "id": "hmg",
-      "name": "Add a Pintle-mounted HMG (cannot take with MMG)",
-      "cost": 25,
-      "limit": 1
-    },
-    {
-      "id": "systems",
-      "name": "If taken as Veteran, add Computational Systems special rule",
-      "cost": 15,
-      "limit": 1
-    }],
+      "id": "medium_at_gun",
+      "name": "Replace Turret-mounted Type 99 Shiboru Cannon with Medium Anti-Tank Gun",
+      "cost": -80
+    }
+  ],
 
-    "upgrades": []
-  },
+  "upgrades": []
+},
   {
-    "id": "meteor",
-    "name": "Churchil Meteor Tank",
-    "factionId": "jpn_TODO",
+    "id": "truck",
+    "name": "Truck",
+    "factionId": "jpn",
 
     "models": 1,
 
     "quality": {
-      "inexperienced": 364,
-      "regular": 455,
-      "veteran": 546
-    },
-
-    "options": [
-    {
-      "id": "tesla",
-      "name": "Replace Turret-mounted Medium Anti Tank Gun with Medium Howitzer and Co-axial MMG",
-      "cost": -35,
-      "limit": 1
-    },
-    {
-      "id": "mmg",
-      "name": "Replace Forward-facing MMG with Vehicle Flamethrower",
-      "cost": 40,
-      "limit": 1
-    }],
-
-    "upgrades": []
-  },
-  {
-    "id": "teslaCannonEmplacement",
-    "name": "M17 Tesla Cannon Emplacement",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "inexperienced": 168,
-      "regular": 210,
-      "veteran": 252
-    },
-
-    "options": [
-
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "automatedCarrier",
-    "name": "Automated Carrier",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "veteran": 158
-    },
-
-    "options": [
-
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "humber",
-    "name": "Humber Armoured Car MK II",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "inexperienced": 96,
-      "regular": 120,
-      "veteran": 144
-    },
-
-    "options": [
-      {
-        "id": "mmg",
-        "name": " Replace Turret-mounted Twin Light Automatic Cannons with Light Automatic Cannon and Co-Axial MMG",
-        "cost": -25,
-        "limit": 1
-      },
-      {
-        "id": "at",
-        "name": " Replace Turret-mounted Twin Light Automatic Cannons with Light Anti-tank Gun and Co-axial MMG",
-        "cost": -25,
-        "limit": 1
-      }
-
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "bren",
-    "name": "Bren Carrier",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "inexperienced": 40,
-      "regular": 50,
-      "veteran": 60
-    },
-
-    "options": [
-      {
-        "id": "lmg",
-        "name": "Add a Pintle-mounted LMG with 360-degree arc of fire",
-        "cost": 10,
-        "limit": 1
-      },
-      {
-        "id": "at",
-        "name": "Replace Forward-facing LMG with Anti-tank Rifle",
-        "cost": 10,
-        "limit": 1
-      }
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "bredford",
-    "name": "Bredford QLT Troop Transport",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "inexperienced": 35,
-      "regular": 44,
-      "veteran": 53
+      "inexperienced": 22,
+      "regular": 27,
+      "veteran": 32
     },
 
     "options": [
@@ -2871,16 +2678,16 @@
     "upgrades": []
   },
   {
-    "id": "jeep",
-    "name": "Jeep",
-    "factionId": "jpn_TODO",
+    "id": "kurogane",
+    "name": "Type 95 Kurogane Scount Car",
+    "factionId": "jpn",
 
     "models": 1,
 
     "quality": {
-      "inexperienced": 14,
-      "regular": 18,
-      "veteran": 22
+      "inexperienced": 15,
+      "regular": 19,
+      "veteran": 23
     },
 
     "options": [
