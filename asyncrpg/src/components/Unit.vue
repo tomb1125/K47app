@@ -136,10 +136,10 @@ function toggle(propertyId: string, selected: boolean) {
 
   </div>
   <div>
-    Number of models: {{armyStore.getUnitModelCount(unit)}}
+    <div class="small-title">Number of models: {{armyStore.getUnitModelCount(unit)}}</div>
   </div>
 <div v-if="upgrades.length > 0" class="section">
-  <h4>Upgrades</h4>
+  <div class="small-title">Upgrades</div>
 
   <div class="grid">
     <template v-for="opt in upgrades" :key="opt.id">
@@ -181,7 +181,7 @@ function toggle(propertyId: string, selected: boolean) {
 
 
 <div v-if="properties.length > 0" class="section">
-  <h4>Properties</h4>
+  <div class="small-title">Properties</div>
 
   <div class="grid">
     <template v-for="prop in properties" :key="prop.id">
@@ -221,6 +221,11 @@ function toggle(propertyId: string, selected: boolean) {
   grid-template-columns: 1fr auto min-content;
   gap: 6px 12px;
   align-items: center;
+}
+
+.small-title {
+  font-style: italic;
+  color: #666;
 }
 
 /* 📱 MOBILE */

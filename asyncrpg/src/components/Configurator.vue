@@ -77,7 +77,7 @@ function loadArmy(event: Event) {
 </script>
 
 <template>
-  <div>
+  <div class="main-configurator">
     <div class="controls">
       <button
         @click="addPlatoon"
@@ -93,12 +93,13 @@ function loadArmy(event: Event) {
         Save Army
       </button>
 
-      <label class="load-button">
+      <label class="load-button" :class="{ disabled: isDisabled }">
         Load Army
         <input
           type="file"
           accept=".json"
           @change="loadArmy"
+          :disabled="isDisabled"
           hidden
         />
       </label>
@@ -114,6 +115,10 @@ function loadArmy(event: Event) {
   display: flex;
   gap: 12px;
   margin-bottom: 16px;
+  
+}
+.main-configurator {
+  max-width: 720px;
 }
 
 .load-button {
@@ -123,6 +128,12 @@ function loadArmy(event: Event) {
   color: white;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.load-button.disabled {
+  background: #777;
+  cursor: not-allowed;
+  pointer-events: none; /* 👈 prevents clicking */
 }
 
 .load-button:hover {

@@ -15,6 +15,7 @@ const store = useArmyStore()
 <template>
   <div class="platoon ">
     <div class="platoon-header">
+      <button @click="store.addUnit(platoon.id)">Add Unit</button>
       <button
           class="delete-btn"
           @click="store.removePlatoon(platoon.id)"
@@ -22,7 +23,6 @@ const store = useArmyStore()
         >
           Delete Platoon 🗑
       </button>
-      <button @click="store.addUnit(platoon.id)">Add Unit</button>
     </div>
     <div v-for="unit in platoon.units" :key="unit.id">
       <Unit :platoonId="platoon.id" :unit="unit" />
