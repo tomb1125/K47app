@@ -5,91 +5,6 @@
     { "id": "jpn", "name": "Empire of Japan" }
   ],
   "units": [
-    {
-      "id": "infantry_squad",
-      "name": "Rifle Squad",
-      "factionId": "cmn",
-
-      "models": 6,
-
-      "quality": {
-        "inexperienced": 42,
-        "regular": 60,
-        "veteran": 78
-      },
-
-      "options": [
-        {
-          "id": "additional_soldiers",
-          "name": "Additional Soldiers (No Mixed Quality)",
-          "costInexperienced": 7,
-          "costRegular": 10,
-          "costVeteran": 13,
-          "addModels": 1,
-          "limit": 6
-        },
-        {
-          "id": "smg",
-          "name": "Replace Rifle with SMG",
-          "cost": 4,
-          "limit": 12
-        },
-        {
-          "id": "assault_rifle",
-          "name": "Replace Rifle with Assault Rifle",
-          "cost": 6,
-          "limit": 12
-        },
-        {
-          "id": "rifle_grenades",
-          "name": "Upgrade Rifle with Rifle Grenades",
-          "cost": 6,
-          "limit": 3
-        },
-        {
-          "id": "lmg",
-          "name": "Replace Rifle with LMG",
-          "cost": 15,
-          "limit": 2
-        },
-        {
-          "id": "flamethrower",
-          "name": "Replace Rifle with Infantry Flamethrower",
-          "cost": 30,
-          "limit": 1,
-          "requires": ["engineers"]
-        }
-      ],
-
-      "upgrades": [
-        {
-          "id": "priams",
-          "name": "PRIAMs",
-          "costPerUnit": 5
-        },
-        {
-          "id": "anti_tank_grenades",
-          "name": "Anti-tank Grenades",
-          "costPerUnit": 2
-        },
-        {
-          "id": "stubborn",
-          "name": "Stubborn",
-          "costPerUnit": 1
-        },
-        {
-          "id": "engineers",
-          "name": "Engineers",
-          "costPerUnit": 1
-        },
-        {
-          "id": "shirkers",
-          "name": "Shirkers",
-          "costPerUnit": -2,
-          "condition": "inexperienced_only"
-        }
-      ]
-    },
 {
   "id": "company_commander",
   "name": "Company Commander – Officer",
@@ -896,13 +811,13 @@
       "id": "smg",
       "name": "Replace the Assistant's Pistol with an SMG",
       "cost": 5,
-      "limit": 3
+      "limit": 1
     },
     {
       "id": "assault_rifle",
       "name": "Replace the Assistant's Pistol with an Assault Rifle",
       "cost": 7,
-      "limit": 3
+      "limit": 1
     }],
 
     "upgrades": []
@@ -1522,12 +1437,523 @@
 
 
 
+ 
+{
+  "id": "company_commander_jpn",
+  "name": "Company Commander – Officer",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+  },
+
+  "options": [
     {
+      "id": "additional_soldiers_pistols",
+      "name": "Additional Soldiers with Pistols (No Mixed Quality)",
+      "costInexperienced": 6,
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "luck",
+      "name": "Luck",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "blade",
+      "name": "The Officer may take a Combat Blade (+1 Pen at Close Quarters)",
+      "cost": 2,
+      "limit": 1
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "rpgs",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    }
+  ]
+},
+{
+  "id": "company_commander_power_armor",
+  "name": "Company Commander – Officer in Battle-Frame Heavy Armour",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "veteran": 87
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_power_armor",
+      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
+      "costVeteran": 22,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "smg",
+      "name": "Replace SMG with LMG",
+      "cost": 11,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "luck",
+      "name": "Luck",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "blade",
+      "name": "The Officer may take a Combat Blade (+1 Pen at Close Quarters)",
+      "cost": 2,
+      "limit": 1
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "heavy",
+      "name": "Heavy"
+    }
+  ]
+},
+{
+  "id": "company_commander_power_armor2",
+  "name": "Company Commander – Officer in Assault-Frame Heavy Armour",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "veteran": 91
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_power_armor",
+      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
+      "costVeteran": 26,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "smg",
+      "name": "Replace SMG with LMG",
+      "cost": 11,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "luck",
+      "name": "Luck",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "heavy",
+      "name": "Heavy"
+    }
+  ]
+},
+{
+  "id": "platoon_commander",
+  "name": "Platoon Commander – Officer",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistols",
+      "name": "Additional Soldiers armed with Pistols (No Mixed Quality)",
+      "costInexperienced": 6,
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "assault_rifle",
+      "name": "Replace Pistol with Assault Rifle",
+      "cost": 7,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "luck",
+      "name": "Luck",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    }
+  ]
+},
+{
+  "id": "platoon_commander_heavy",
+  "name": "Platoon Commander – Officer in Battle-Frame Heavy Armour",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "veteran": 48
+  },
+  "options": [
+    {
+      "id": "additional_soldiers_power_armor",
+      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
+      "costVeteran": 22,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "smg",
+      "name": "Replace SMG with LMG",
+      "cost": 11,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "luck",
+      "name": "Luck",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "blade",
+      "name": "The Officer may take a Combat Blade (+1 Pen at Close Quarters)",
+      "cost": 2,
+      "limit": 1
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    }
+  ]
+},
+{
+  "id": "platoon_commander_heavy2",
+  "name": "Platoon Commander – Officer in Assult-Frame Heavy Armour",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "veteran": 52
+  },
+  "options": [
+    {
+      "id": "additional_soldiers_power_armor",
+      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
+      "costVeteran": 26,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "smg",
+      "name": "Replace SMG with LMG",
+      "cost": 11,
+      "limit": 3
+    },
+    {
+      "id": "guts",
+      "name": "Guts",
+      "cost": 10,
+      "limit": 1,
+      "group": "hero_ability"
+    },
+    {
+      "id": "luck",
+      "name": "Luck",
+      "cost": 15,
+      "limit": 1,
+      "group": "hero_ability"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "priams",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    }
+  ]
+
+},
+{
+  "id": "medic_jpn",
+  "name": "Medic",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "regular": 23,
+    "veteran": 30
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistol",
+      "name": "Additional Soldiers armed with Pistols",
+      "costRegular" : 9,
+      "costVeteran" : 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_rifle",
+      "name": "Replace Pistol with Rifle (additional soldiers only)",
+      "cost": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_smg",
+      "name": "Replace Pistol with SMG (additional soldiers only)",
+      "cost": 5,
+      "limit": 2
+    }
+  ],
+
+  "upgrades": [],
+
+  "rules": [
+    {
+      "id": "medic",
+      "name": "Medic"
+    }
+  ]
+},
+{
+  "id": "artillery_forward_observer_jpn",
+  "name": "Artillery Forward Observer",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "regular": 75,
+    "veteran": 90
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistol",
+      "name": "Additional Soldiers armed with Pistols",
+      "costRegular": 9,
+      "costVeteran": 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_rifle",
+      "name": "Replace Pistol with Rifle",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "replace_smg",
+      "name": "Replace Pistol with SMG",
+      "cost": 5,
+      "limit": 3
+    }
+  ],
+
+  "upgrades": [],
+
+  "rules": [
+    {
+      "id": "infiltrator",
+      "name": "Infiltrator"
+    }
+  ]
+},
+{
+  "id": "kemoeitai",
+  "name": "Kempeitai Inspirational Officer",
+  "factionId": "jpn",
+
+  "models": 1,
+
+
+  "quality": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+  },
+
+  "options": [
+    {
+      "id": "additional_soldiers_pistol",
+      "name": "Additional Soldiers armed with Pistols",
+      "costInexperienced" : 6,
+      "costRegular" : 9,
+      "costVeteran" : 12,
+      "addModels": 1,
+      "limit": 2
+    },
+    {
+      "id": "replace_rifle",
+      "name": "Replace Pistol with Rifle (additional soldiers only)",
+      "cost": 1,
+      "limit": 3
+    },
+    {
+      "id": "replace_smg",
+      "name": "Replace Pistol with SMG (additional soldiers only)",
+      "cost": 5,
+      "limit": 3
+    },
+    {
+      "id": "blade",
+      "name": "The Kempeitai Inspirational Officer may take a Combat Blade (+1 Pen at Close Quarters)",
+      "cost": 2,
+      "limit": 1
+    }
+  ],
+
+  "upgrades": [],
+
+  "rules": [
+    {
+      "id": "medic",
+      "name": "Medic"
+    }
+  ]
+},
+{
       "id": "infantry_squad_jpn",
-      "name": "Rifle Squad",
+      "name": "Imperial Japanese Infantry Squad",
       "factionId": "jpn",
 
-      "models": 6,
+      "models": 7,
 
       "quality": {
         "inexperienced": 49,
@@ -1618,551 +2044,37 @@
         }
       ]
     },
-{
-  "id": "company_commander_jpn",
-  "name": "Company Commander – Officer",
-  "factionId": "jpn",
-
-  "models": 1,
-
-  "quality": {
-    "inexperienced": 42,
-    "regular": 60,
-    "veteran": 78
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_pistols",
-      "name": "Additional Soldiers with Pistols (No Mixed Quality)",
-      "costInexperienced": 6,
-      "costRegular": 9,
-      "costVeteran": 12,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "rifle",
-      "name": "Replace Pistol with Rifle",
-      "cost": 1,
-      "limit": 3
-    },
-    {
-      "id": "smg",
-      "name": "Replace Pistol with SMG",
-      "cost": 5,
-      "limit": 3
-    },
-    {
-      "id": "guts",
-      "name": "Guts",
-      "cost": 10,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "luck",
-      "name": "Luck",
-      "cost": 15,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "blade",
-      "name": "The Officer may take a Combat Blade (+1 Pen at Close Quarters)",
-      "cost": 2,
-      "limit": 1
-    }
-  ],
-
-  "upgrades": [
-    {
-      "id": "priams",
-      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
-      "costPerUnit": 5
-    }
-  ]
-},
-{
-  "id": "company_commander_power_armor",
-  "name": "Company Commander – Officer in Battle Frame Heavy Armour",
-  "factionId": "jpn",
-
-  "models": 1,
-
-  "quality": {
-    "veteran": 87
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_power_armor",
-      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
-      "costVeteran": 22,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "smg",
-      "name": "Replace SMG with LMG",
-      "cost": 11,
-      "limit": 3
-    },
-    {
-      "id": "guts",
-      "name": "Guts",
-      "cost": 10,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "luck",
-      "name": "Luck",
-      "cost": 15,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "blade",
-      "name": "The Officer may take a Combat Blade (+1 Pen at Close Quarters)",
-      "cost": 2,
-      "limit": 1
-    }
-  ],
-
-  "upgrades": [
-    {
-      "id": "priams",
-      "name": "PRIAMs",
-      "costPerUnit": 5
-    },
-    {
-      "id": "anti_tank_grenades",
-      "name": "Anti-tank Grenades",
-      "costPerUnit": 2
-    }
-  ],
-
-  "rules": [
-    {
-      "id": "heavy",
-      "name": "Heavy"
-    }
-  ]
-},
-{
-  "id": "company_commander_power_armor2",
-  "name": "Company Commander – Officer in Assault Frame Heavy Armour",
-  "factionId": "jpn",
-
-  "models": 1,
-
-  "quality": {
-    "veteran": 91
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_power_armor",
-      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)",
-      "costVeteran": 26,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "smg",
-      "name": "Replace SMG with LMG",
-      "cost": 11,
-      "limit": 3
-    },
-    {
-      "id": "guts",
-      "name": "Guts",
-      "cost": 10,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "luck",
-      "name": "Luck",
-      "cost": 15,
-      "limit": 1,
-      "group": "hero_ability"
-    }
-  ],
-  "upgrades": [
-    {
-      "id": "priams",
-      "name": "PRIAMs",
-      "costPerUnit": 5
-    },
-    {
-      "id": "anti_tank_grenades",
-      "name": "Anti-tank Grenades",
-      "costPerUnit": 2
-    }
-  ],
-
-  "rules": [
-    {
-      "id": "heavy",
-      "name": "Heavy"
-    }
-  ]
-},
-{
-  "id": "platoon_commander",
-  "name": "Platoon Commander – Officer",
-  "factionId": "jpn_TODO",
-
-  "models": 1,
-
-  "quality": {
-    "inexperienced": 21,
-    "regular": 30,
-    "veteran": 39
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_pistols",
-      "name": "Additional Soldiers armed with Pistols (No Mixed Quality)",
-      "costInexperienced": 6,
-      "costRegular": 9,
-      "costVeteran": 12,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "rifle",
-      "name": "Replace Pistol with Rifle",
-      "cost": 1,
-      "limit": 3
-    },
-    {
-      "id": "smg",
-      "name": "Replace Pistol with SMG",
-      "cost": 5,
-      "limit": 3
-    },
-    {
-      "id": "assault_rifle",
-      "name": "Replace Pistol with Assault Rifle",
-      "cost": 7,
-      "limit": 3
-    },
-    {
-      "id": "guts",
-      "name": "Guts",
-      "cost": 10,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "rift_mastery",
-      "name": "Rift Mastery",
-      "cost": 15,
-      "limit": 1,
-      "group": "hero_ability"
-    }
-  ],
-
-  "upgrades": [
-    {
-      "id": "priams",
-      "name": "PRIAMs",
-      "costPerUnit": 5
-    }
-  ]
-},
-{
-  "id": "platoon_commander_galahad",
-  "name": "Platoon Commander – Officer in Galahad Heavy Armour",
-  "factionId": "jpn_TODO",
-
-  "models": 1,
-
-  "quality": {
-    "regular": 50,
-    "veteran": 59
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_galahad",
-      "name": "Additional Soldiers in Grade 1 Heavy Powered Armour armed with LMGs (No Mixed Quality)",
-      "costRegular": 30,
-      "costVeteran": 33,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "heavy_tesla_rifle",
-      "name": "Replace LMG with Heavy Tesla Rifle",
-      "cost": -5,
-      "limit": 1
-    },
-    {
-      "id": "guts",
-      "name": "Guts",
-      "cost": 10,
-      "limit": 1,
-      "group": "hero_ability"
-    },
-    {
-      "id": "rift_mastery",
-      "name": "Rift Mastery",
-      "cost": 15,
-      "limit": 1,
-      "group": "hero_ability"
-    }
-  ],
-
-  "upgrades": [
-    {
-      "id": "priams",
-      "name": "PRIAMs",
-      "costPerUnit": 5
-    },
-    {
-      "id": "anti_tank_grenades",
-      "name": "Anti-tank Grenades",
-      "costPerUnit": 2
-    },
-    {
-      "id": "stubborn",
-      "name": "Stubborn",
-      "costPerUnit": 1
-    },
-    {
-      "id": "tough_fighters",
-      "name": "Tough Fighters",
-      "costPerUnit": 1
-    }
-  ],
-
-  "rules": [
-    {
-      "id": "heavy",
-      "name": "Heavy"
-    },
-    {
-      "id": "rift_unit",
-      "name": "Rift Unit",
-      "condition": "heavy_tesla_rifle"
-    }
-  ]
-},
-{
-  "id": "medic",
-  "name": "Medic",
-  "factionId": "jpn_TODO",
-
-  "models": 1,
-
-  "quality": {
-    "veteran": 30
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_pistol",
-      "name": "Additional Soldiers armed with Pistols",
-      "cost": 12,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "replace_rifle",
-      "name": "Replace Pistol with Rifle (additional soldiers only)",
-      "cost": 1,
-      "limit": 2
-    },
-    {
-      "id": "replace_smg",
-      "name": "Replace Pistol with SMG (additional soldiers only)",
-      "cost": 5,
-      "limit": 2
-    },
-    {
-      "id": "replace_assault_rifle",
-      "name": "Replace Pistol with Assault Rifle (additional soldiers only)",
-      "cost": 7,
-      "limit": 2
-    }
-  ],
-
-  "upgrades": [],
-
-  "rules": [
-    {
-      "id": "medic",
-      "name": "Medic"
-    }
-  ]
-},
-{
-  "id": "artillery_forward_observer",
-  "name": "Artillery Forward Observer",
-  "factionId": "jpn_TODO",
-
-  "models": 1,
-
-  "quality": {
-    "regular": 75,
-    "veteran": 90
-  },
-
-  "options": [
-    {
-      "id": "additional_soldiers_pistol",
-      "name": "Additional Soldiers armed with Pistols",
-      "costRegular": 9,
-      "costVeteran": 12,
-      "addModels": 1,
-      "limit": 2
-    },
-    {
-      "id": "replace_rifle",
-      "name": "Replace Pistol with Rifle",
-      "cost": 1,
-      "limit": 3
-    },
-    {
-      "id": "replace_smg",
-      "name": "Replace Pistol with SMG",
-      "cost": 5,
-      "limit": 3
-    },
-    {
-      "id": "replace_assault_rifle",
-      "name": "Replace Pistol with Assault Rifle",
-      "cost": 7,
-      "limit": 3
-    }
-  ],
-
-  "upgrades": [],
-
-  "rules": [
-    {
-      "id": "infiltrator",
-      "name": "Infiltrator"
-    }
-  ]
-},
-    {
-      "id": "infantry_squad",
-      "name": "Rifle Squad",
-      "factionId": "jpn_TODO",
-
-      "models": 6,
-
-      "quality": {
-        "inexperienced": 42,
-        "regular": 60,
-        "veteran": 78
-      },
-
-      "options": [
-        {
-          "id": "additional_soldiers",
-          "name": "Additional Soldiers (No Mixed Quality)",
-          "costInexperienced": 7,
-          "costRegular": 10,
-          "costVeteran": 13,
-          "addModels": 1,
-          "limit": 6
-        },
-        {
-          "id": "smg",
-          "name": "Replace Rifle with SMG",
-          "cost": 4,
-          "limit": 12
-        },
-        {
-          "id": "assault_rifle",
-          "name": "Replace Rifle with Assault Rifle",
-          "cost": 6,
-          "limit": 12
-        },
-        {
-          "id": "rifle_grenades",
-          "name": "Upgrade Rifle with Rifle Grenades",
-          "cost": 6,
-          "limit": 3
-        },
-        {
-          "id": "lmg",
-          "name": "Replace Rifle with LMG",
-          "cost": 15,
-          "limit": 2
-        },
-        {
-          "id": "flamethrower",
-          "name": "Replace Rifle with Infantry Flamethrower",
-          "cost": 30,
-          "limit": 1,
-          "requires": ["engineers"]
-        }
-      ],
-
-      "upgrades": [
-        {
-          "id": "priams",
-          "name": "PRIAMs",
-          "costPerUnit": 5
-        },
-        {
-          "id": "anti_tank_grenades",
-          "name": "Anti-tank Grenades",
-          "costPerUnit": 2
-        },
-        {
-          "id": "stubborn",
-          "name": "Stubborn",
-          "costPerUnit": 1
-        },
-        {
-          "id": "engineers",
-          "name": "Engineers",
-          "costPerUnit": 1
-        },
-        {
-          "id": "shirkers",
-          "name": "Shirkers",
-          "costPerUnit": -2,
-          "condition": "inexperienced_only"
-        }
-      ]
-    },
   {
-    "id": "galahad_armoured_infantry",
-    "name": "Galahad Armoured Infantry Squad",
-    "factionId": "jpn_TODO",
+    "id": "shiboru_squad",
+    "name": "Imperial Japanese Shiboru Rifle Squad",
+    "factionId": "jpn",
 
-    "models": 4,
+    "models": 7,
 
     "quality": {
-      "regular": 120,
-      "veteran": 132
+      "veteran": 161
     },
 
     "options": [
       {
         "id": "additional_soldiers",
         "name": "Additional Soldiers in Grade 1 Powered Armour (No Mixed Quality)",
-        "costRegular": 30,
-        "costVeteran": 33,
+        "costVeteran": 23,
         "addModels": 1,
-        "limit": 6
+        "limit": 5
+      },
+      {
+        "id": "blade",
+        "name": "The NCO may take a Combat Blade (+1 Pen at Close Quarters) ",
+        "cost": 2,
+        "limit": 1
       }
     ],
 
     "upgrades": [
       {
         "id": "priams",
-        "name": "PRIAMs",
+        "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
         "costPerUnit": 5
       },
       {
@@ -2176,11 +2088,6 @@
         "costPerUnit": 1
       },
       {
-        "id": "stubborn",
-        "name": "Stubborn",
-        "costPerUnit": 1
-      },
-      {
         "id": "tough_fighters",
         "name": "Tough Fighters",
         "costPerUnit": 1
@@ -2188,27 +2095,56 @@
     ]
   },
   {
-    "id": "italian_bersaglieri",
-    "name": "Italian Bersaglieri Squad",
-    "factionId": "jpn_TODO",
+    "id": "battleFrameInfantry",
+    "name": "Battle-Frame Armoured Infantry Squad",
+    "factionId": "jpn",
 
-    "models": 4,
+    "models": 5,
 
     "quality": {
-      "veteran": 136
+      "veteran": 110
     },
 
     "options": [
       {
         "id": "additional_soldiers",
         "name": "Additional Soldiers in Grade 1 Powered Armour",
-        "costVeteran": 34,
+        "costVeteran": 22,
         "addModels": 1,
-        "limit": 4
-      }
+        "limit": 5
+      },
+      {
+        "id": "smg",
+        "name": "Additional Soldiers in Grade 1 Powered Armour",
+        "cost": 11,
+        "limit": 2
+      },
+      {
+        "id": "rpg",
+        "name": "Replace SMG with Panzerschreck",
+        "cost": 66,
+        "limit": 1
+      },
+    {
+      "id": "blade",
+      "name": "The Officer may take a Combat Blade (+1 Pen at Close Quarters)",
+      "cost": 2,
+      "limit": 1
+    }
     ],
 
     "upgrades": [
+      {
+        "id": "shiboru",
+        "name": "Replace SMGs with Type 10 Shiboru Rifles",
+        "costPerUnit": 6
+      },
+      
+      {
+        "id": "priams",
+        "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+        "costPerUnit": 5
+      },
       {
         "id": "anti_tank_grenades",
         "name": "Anti-tank Grenades",
@@ -2217,98 +2153,44 @@
     ]
   },
   {
-    "id": "mk1_automated_infantry",
-    "name": "Mk I Automated Infantry",
-    "factionId": "jpn_TODO",
+    "id": "assaultFrameInfantry",
+    "name": "Assault-Frame Armoured Infantry Squad",
+    "factionId": "jpn",
 
     "models": 5,
 
     "quality": {
-      "veteran": 175
+      "veteran": 130
     },
 
     "options": [
       {
-        "id": "additional_automatons",
-        "name": "Additional Mk I Automated Infantry",
-        "costVeteran": 35,
+        "id": "additional_soldiers",
+        "name": "Additional Soldiers in Grade 1 Powered Armour",
+        "costVeteran": 26,
         "addModels": 1,
         "limit": 5
-      }
-    ],
-
-    "upgrades": [
+      },
       {
-        "id": "hmg_upgrade",
-        "name": "Replace MMGs with HMGs",
-        "costPerUnit": 10
-      }
-    ]
-  },
-
-  {
-    "id": "mk2_heavy_automated_infantry",
-    "name": "MK II Heavy Automated Infantry",
-    "factionId": "jpn_TODO",
-
-    "models": 2,
-
-    "quality": {
-      "veteran": 126
-    },
-
-    "options": [
-      {
-        "id": "additional_mk2",
-        "name": "Additional Mk II Heavy Automated Infantry",
-        "cost": 63,
-        "addModels": 1,
+        "id": "smg",
+        "name": "Additional Soldiers in Grade 1 Powered Armour",
+        "cost": 11,
         "limit": 2
-      },
-      {
-        "id": "heavy_cannon_upgrade",
-        "name": "Replace Light Automatic Cannon with Heavy Automatic Cannon",
-        "cost": 10,
-        "limit": 1
-      }
-    ],
-
-    "upgrades": []
-  },
-  {
-    "id": "british_grenadiers",
-    "name": "British Grenadiers",
-    "factionId": "jpn_TODO",
-
-    "models": 5,
-
-    "quality": {
-      "veteran": 95
-    },
-
-    "options": [
-      {
-        "id": "additional_grenadiers",
-        "name": "Additional Grenadiers",
-        "cost": 19,
-        "addModels": 1,
-        "limit": 5
-      },
-      {
-        "id": "heavy_tesla_rifle",
-        "name": "Replace Assault Rifle with Heavy Tesla Rifle",
-        "cost": 4,
-        "limit": 1
-      },
-      {
-        "id": "rifle_grenades",
-        "name": "Upgrade Assault Rifle with Rifle Grenades",
-        "cost": 6,
-        "limit": 3
       }
     ],
 
     "upgrades": [
+      {
+        "id": "shiboru",
+        "name": "Replace SMGs with Type 10 Shiboru Rifles",
+        "costPerUnit": 6
+      },
+      
+      {
+        "id": "rpgs",
+        "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+        "costPerUnit": 5
+      },
       {
         "id": "anti_tank_grenades",
         "name": "Anti-tank Grenades",
@@ -2317,39 +2199,80 @@
     ]
   },
   {
-    "id": "cerberus_squad",
-    "name": "Cerberus Squad",
-    "factionId": "jpn_TODO",
+    "id": "shibitoSquad",
+    "name": "Shibito Squad",
+    "factionId": "jpn",
 
-    "models": 4,
+    "models": 6,
 
     "quality": {
-      "veteran": 107
+      "veteran": 114
     },
 
     "options": [
       {
-        "id": "additional_handler",
-        "name": "Additional Handler with Pistol",
-        "cost": 26,
-        "addModels": 1,
-        "limit": 2
-      },
-      {
-        "id": "additional_war_dogs",
-        "name": "Additional War Dogs",
-        "cost": 27,
+        "id": "additional_shibito",
+        "name": "Additional Shibito",
+        "costVeteran": 19,
         "addModels": 1,
         "limit": 6
       }
-    ],
-
-    "upgrades": []
+    ]
   },
+{
+  "id": "ghost_attack_squad_jpn",
+  "name": "Ghost Attack Squad",
+  "factionId": "jpn",
+
+  "models": 5,
+
+  "quality": {
+    "veteran": 160
+  },
+
+  "options": [
+    {
+      "id": "additional_ghost_soldiers",
+      "name": "Additional Ghost Attack Soldiers",
+      "cost": 32,
+      "addModels": 1,
+      "limit": 5
+    },
+    {
+      "id": "combat_blade",
+      "name": "The NCO may take a Combat Blade (+1 Pen at Close Quarters)",
+      "cost": 2,
+      "limit": 1
+    }
+  ],
+
+  "upgrades": [
+    {
+      "id": "rpgs",
+      "name": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+      "costPerUnit": 5
+    },
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    },
+    {
+      "id": "engineers",
+      "name": "Engineers",
+      "costPerUnit": 1
+    },
+    {
+      "id": "smg_replacement",
+      "name": "Replace Type 10 Shiboru Rifle with SMG",
+      "costPerUnit": -6
+    }
+  ]
+},
   {
-    "id": "mmg_team",
+    "id": "mmg_team_jpn",
     "name": "MMG Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 3,
 
@@ -2364,48 +2287,16 @@
     "upgrades": []
   },
   {
-    "id": "hmg_team",
-    "name": "HMG Team",
-    "factionId": "jpn_TODO",
-
-    "models": 3,
-
-    "quality": {
-      "inexperienced": 49,
-      "regular": 70,
-      "veteran": 91
-    },
-
-    "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "lancer",
-    "name": "Automated Mobile Platform ‘Lancer’",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "veteran": 99
-    },
-
-    "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "piat_team",
-    "name": "PIAT Team",
-    "factionId": "jpn_TODO",
+    "id": "antitankjpn",
+    "name": "Anti Tank Rifle Team",
+    "factionId": "jpn",
 
     "models": 2,
 
     "quality": {
-      "inexperienced": 28,
-      "regular": 40,
-      "veteran": 52
+      "inexperienced": 18,
+      "regular": 25,
+      "veteran": 33
     },
 
     "options": [],
@@ -2413,16 +2304,14 @@
     "upgrades": []
   },
   {
-    "id": "super_bazooka_team",
-    "name": "Super Bazooka Team",
-    "factionId": "jpn_TODO",
+    "id": "btantitankjpn",
+    "name": "Battle-Frame Anti Tank Rifle Team",
+    "factionId": "jpn",
 
     "models": 2,
 
     "quality": {
-      "inexperienced": 56,
-      "regular": 80,
-      "veteran": 104
+      "veteran": 118
     },
 
     "options": [],
@@ -2430,24 +2319,9 @@
     "upgrades": []
   },
   {
-    "id": "hunter",
-    "name": "Automated Mobile Platform ‘Hunter’",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "veteran": 84
-    },
-
-    "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "sniper_team",
+    "id": "sniper_team_jpn",
     "name": "Sniper Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 2,
 
@@ -2473,21 +2347,15 @@
       "id": "smg",
       "name": "Replace the Assistant's Pistol with an SMG",
       "cost": 5,
-      "limit": 3
-    },
-    {
-      "id": "assault_rifle",
-      "name": "Replace the Assistant's Pistol with an Assault Rifle",
-      "cost": 7,
-      "limit": 3
+      "limit": 1
     }],
 
     "upgrades": []
   },
   {
-    "id": "light_mortar",
+    "id": "light_mortar_jpn",
     "name": "Light Mortar Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 2,
 
@@ -2502,9 +2370,9 @@
     "upgrades": []
   },
   {
-    "id": "medium_mortar",
+    "id": "medium_mortar_jpn",
     "name": "Medium Mortar Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 3,
 
@@ -2525,9 +2393,9 @@
     "upgrades": []
   },
   {
-    "id": "heavy_mortar",
+    "id": "heavy_mortar_jpn",
     "name": "Heavy Mortar Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 4,
 
@@ -2548,24 +2416,9 @@
     "upgrades": []
   },
   {
-    "id": "bombardier",
-    "name": "Automated Mobile Platform ‘Bombardier’",
-    "factionId": "jpn_TODO",
-
-    "models": 1,
-
-    "quality": {
-      "veteran": 84
-    },
-
-    "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "flamer",
+    "id": "flamer_jpn",
     "name": "Flamethrower Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 2,
 
@@ -2576,12 +2429,17 @@
 
     "options": [],
 
-    "upgrades": []
+    "upgrades": [
+    {
+      "id": "anti_tank_grenades",
+      "name": "Anti-tank Grenades",
+      "costPerUnit": 2
+    }]
   },
   {
-    "id": "light_artilery",
+    "id": "light_artilery_jpn",
     "name": "Light Artillery Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 3,
 
@@ -2602,9 +2460,9 @@
     "upgrades": []
   },
   {
-    "id": "medium_artilery",
+    "id": "medium_artilery_jpn",
     "name": "Medium Artillery Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 4,
 
@@ -2631,9 +2489,9 @@
     "upgrades": []
   },
   {
-    "id": "heavy_artilery",
+    "id": "heavy_artilery_jpn",
     "name": "Heavy Artillery Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 5,
 
@@ -2660,7 +2518,7 @@
     "upgrades": []
   },
   {
-    "id": "light_at",
+    "id": "light_at_jpn",
     "name": "Light Anti Tank Team",
     "factionId": "jpn_TODO",
 
@@ -2677,9 +2535,9 @@
     "upgrades": []
   },
   {
-    "id": "medium_at",
+    "id": "medium_at_jpn",
     "name": "Medium Anti Tank Team",
-    "factionId": "jpn_TODO",
+    "factionId": "jpn",
 
     "models": 3,
 
@@ -2690,63 +2548,6 @@
     },
 
     "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "heavy_at",
-    "name": "Heavy Anti Tank Team",
-    "factionId": "jpn_TODO",
-
-    "models": 4,
-
-    "quality": {
-      "inexperienced": 70,
-      "regular": 100,
-      "veteran": 130
-    },
-
-    "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "super_heavy_at",
-    "name": "Super Heavy Anti Tank Team",
-    "factionId": "jpn_TODO",
-
-    "models": 5,
-
-    "quality": {
-      "inexperienced": 98,
-      "regular": 140,
-      "veteran": 182
-    },
-
-    "options": [],
-
-    "upgrades": []
-  },
-  {
-    "id": "tesla_cannon",
-    "name": "M17 Tesla Cannon Team",
-    "factionId": "jpn_TODO",
-
-    "models": 3,
-
-    "quality": {
-      "inexperienced": 88,
-      "regular": 125,
-      "veteran": 163
-    },
-
-    "options": [
-    {
-      "id": "galahad",
-      "name": "If taken as Regular or Veteran, upgrade entire crew to wear Grade 1 Galahad Powered Armour",
-      "cost": 15,
-      "limit": 1
-    }],
 
     "upgrades": []
   },
