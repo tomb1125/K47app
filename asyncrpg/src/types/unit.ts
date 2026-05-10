@@ -5,28 +5,42 @@ export interface Faction {
 
 // src/types/unit.ts
 export interface Unit {
+  selectedQuality: string
   id: string
+  unitId : string | null
   name: string
   factionId: string
   quality: {
-    inexpierienced: number
-    regular: number
-    veteran: number
+    inexperienced?: number | null
+    regular?: number | null
+    veteran?: number | null
   }
   models: number
-  upgrades: ArmyUpgrade[]
-  properties: ArmyProperty[]
+  options: ArmyUpgrade[]
+  upgrades: ArmyProperty[]
 }
 
 export interface ArmyUpgrade {
-  upgradeId: string
+  id: string
+  name: string
+  upgradeId: string | null
+  propertyId: string | null
   count: number
   addModels?: number
+  cost: number
+  costInexperienced?: number
+  costRegular?: number
+  costVeteran?: number
+  limit: number
 }
 
 
 export interface ArmyProperty {
-  propertyId: string
+  id: string
+  name: string
+  upgradeId: string | null
+  propertyId: string | null
   selected: boolean
-  costPerUnit: number
+  costPerUnit: number | null
+  count?: number
 }

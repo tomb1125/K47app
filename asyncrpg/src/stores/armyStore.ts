@@ -2,6 +2,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { useUnitStore } from './unitStore'
+import type { Unit } from '@/types/unit'
 
 export interface ArmyUpgrade {
   upgradeId: string
@@ -12,14 +13,16 @@ export interface ArmyUpgrade {
 export interface ArmyProperty {
   propertyId: string
   selected: boolean
-  costPerUnit: number
+  costPerUnit: number | null
 }
+
+type Quality = 'inexperienced' | 'regular' | 'veteran'
 export interface ArmyUnit {
   id: string,
   unitId: string | null
-  quality: 'inexpierienced' | 'regular' | 'veteran' | null,
+  quality: Quality | null | undefined,
   upgrades: ArmyUpgrade[],
-  properties: ArmyProperty[],
+  properties?: ArmyProperty[],
   models: number
 }
 
@@ -62,6 +65,9 @@ export const useArmyStore = defineStore('army', () => {
         }
 
         const modelCount = getUnitModelCount(u)
+        if(u.properties === undefined) {
+          u.properties = [];
+        }
 
         for (const prop of u.properties) {
           if (!prop.selected) continue
@@ -98,10 +104,13 @@ export const useArmyStore = defineStore('army', () => {
     const unit = {
       id: crypto.randomUUID() as string,
       unitId: null,
-      quality: 'regular' // default
+      quality: 'regular',
+      upgrades: [],
+      properties: [],
+      models: 0
     };
 
-    platoon.units.unshift(unit)
+    platoon.units.unshift(unit as any)
 
     
   }
@@ -136,8 +145,9 @@ export const useArmyStore = defineStore('army', () => {
     if (!def) return
 
     const qualities = Object.keys(def.quality)
-    unit.quality = qualities.length > 0 ? qualities[0] : null
-
+    unit.quality = qualities.length > 0
+      ? (qualities[0] as Quality)
+      : null
     // ⭐ initialize upgrades
     unit.upgrades = def.options.map(opt => ({
       upgradeId: opt.id,
@@ -146,7 +156,8 @@ export const useArmyStore = defineStore('army', () => {
 
     unit.properties = (def.upgrades || []).map(p => ({
       propertyId: p.id,
-      selected: false
+      selected: false,
+      costPerUnit: p.costPerUnit
     }))
   }
   function setUpgradeCount(
@@ -167,16 +178,16 @@ export const useArmyStore = defineStore('army', () => {
     upgrade.count = count
   }
 
-function setQuality(platoonId: string, unitId: string, quality: ArmyUnit['quality']) {
+function setQuality(platoonId: string, unitId: string, quality: string) {
     const platoon = platoons.value.find(p => p.id === platoonId)
     if (!platoon) return
 
     const unit = platoon.units.find(u => u.id === unitId)
     if (!unit) return
-    unit.quality = quality
+    unit.quality = quality as ArmyUnit['quality'] 
   }
 
-function getUnitModelCount(unit: ArmyUnit): number {
+function getUnitModelCount(unit: Unit | ArmyUnit): number {
   const unitStore = useUnitStore()
 
   if (!unit.unitId) return 0
@@ -192,7 +203,7 @@ function getUnitModelCount(unit: ArmyUnit): number {
     if (!opt) continue
 
     const add = opt.addModels || 0
-    total += add * up.count
+    total += add * (up.count ?? 1)
   }
 
   return total
@@ -209,7 +220,9 @@ function toggleProperty(
 
   const unit = platoon.units.find(u => u.id === armyUnitId)
   if (!unit) return
-
+  if(unit.properties === undefined) {
+      unit.properties = [];
+  }
   const prop = unit.properties.find(p => p.propertyId === propertyId)
   if (!prop) return
 

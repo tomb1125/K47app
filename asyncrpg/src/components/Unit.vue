@@ -1,17 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useArmyStore } from '@/stores/armyStore'
+import { useArmyStore, type ArmyUnit } from '@/stores/armyStore'
 import { useUnitStore } from '@/stores/unitStore'
 import { storeToRefs } from 'pinia'
-import type { Unit } from '@/types/unit';
+import type { ArmyProperty, ArmyUpgrade, Unit } from '@/types/unit';
 
 const props = defineProps<{
   platoonId: string
-  unit: {
-    id: string
-    unitId: string | null
-    quality: 'inexpierienced' | 'regular' | 'veteran' | null
-  }
+  unit: Unit
 }>()
 
 const armyStore = useArmyStore()
@@ -36,7 +32,7 @@ const availableQualities = computed(() => {
 const upgrades = computed(() => selectedDefinition.value?.options || [])
 
 function getUpgradeCount(upgradeId: string) {
-  return props.unit.upgrades.find(u => u.upgradeId === upgradeId)?.count || 0
+  return props.unit?.upgrades.find(u => u.upgradeId === upgradeId)?.count || 0
 }
 
 function setCheckbox(upgradeId: string, checked: boolean) {
@@ -51,7 +47,7 @@ const properties = computed(() =>
   selectedDefinition.value?.upgrades || []
 )
 
-function formatUpgradeCost(unit: Unit, opt: any) {
+function formatUpgradeCost(unit: Unit | ArmyUnit, opt: any) {
   if (!unit.quality) return ''
 
   const costMap = {
@@ -60,7 +56,7 @@ function formatUpgradeCost(unit: Unit, opt: any) {
     veteran: opt.costVeteran
   }
 
-  const cost = costMap[unit.quality] ?? opt.cost ?? 0
+  const cost = costMap[(unit.quality as ArmyUnit['quality']) ?? 'regular'] ?? opt.cost ?? 0
 
   return cost > 0 ? `+${cost}` : `${cost}`
 }
@@ -77,17 +73,13 @@ function formatPropertyCost(propertyId: string) {
   return cost > 0 ? `+${cost}/model` : `${cost}/model`
 }
 
+type QualityKey = 'inexperienced' | 'regular' | 'veteran'
+
 function formatQualityCost(q: string) {
   const def = selectedDefinition.value
   if (!def) return ''
 
-  const costMap = {
-    inexperienced: def.costInexperienced,
-    regular: def.costRegular,
-    veteran: def.costVeteran
-  }
-
-  const cost = def.quality[q];
+  const cost = def.quality[q as QualityKey] ?? 1000
 
   return cost > 0 ? ` (+${cost})` : cost < 0 ? ` (${cost})` : ''
 }
@@ -101,10 +93,6 @@ function setNumber(upgradeId: string, value: string) {
     upgradeId,
     count
   )
-}
-
-function isPropertySelected(propertyId: string) {
-  return props.unit.properties.find(p => p.propertyId === propertyId)?.selected || false
 }
 
 function toggle(propertyId: string, selected: boolean) {
@@ -123,7 +111,7 @@ function toggle(propertyId: string, selected: boolean) {
     <!-- ⭐ QUALITY PICKLIST -->
   <select
     :value="unit.quality || ''"
-    @change="e => armyStore.setQuality(platoonId, unit.id, e.target.value)"
+    @change="e => armyStore.setQuality(platoonId, unit.id, (e.target as HTMLInputElement).value)"
   >
     <option
       v-for="q in availableQualities"
@@ -137,7 +125,7 @@ function toggle(propertyId: string, selected: boolean) {
     <!-- UNIT PICKLIST -->
     <select
       :value="unit.unitId || ''"
-      @change="e => armyStore.setUnit(platoonId, unit.id, e.target.value)"
+      @change="e => armyStore.setUnit(platoonId, unit.id, (e.target as HTMLInputElement).value || '')"
     >
       <option disabled value="">Select unit</option>
       <option v-for="u in availableUnits" :key="u.id" :value="u.id">
@@ -176,7 +164,7 @@ function toggle(propertyId: string, selected: boolean) {
           v-if="!opt.limit || opt.limit === 1"
           type="checkbox"
           :checked="getUpgradeCount(opt.id) > 0"
-          @change="e => setCheckbox(opt.id, e.target.checked)"
+          @change="e => setCheckbox(opt.id, (e.target as HTMLInputElement).checked)"
         />
 
         <!-- MULTIPLE -->
@@ -186,7 +174,7 @@ function toggle(propertyId: string, selected: boolean) {
           min="0"
           :max="opt.limit"
           :value="getUpgradeCount(opt.id)"
-          @input="e => setNumber(opt.id, e.target.value)"
+          @input="e => setNumber(opt.id, (e.target as HTMLInputElement).value)"
         />
       </div>
 
@@ -215,8 +203,7 @@ function toggle(propertyId: string, selected: boolean) {
       <div class="input">
         <input
           type="checkbox"
-          :checked="isPropertySelected(prop.id)"
-          @change="e => toggle(prop.id, e.target.checked)"
+          @change="e => toggle(prop.id, (e.target as HTMLInputElement).checked)"
         />
       </div>
 
