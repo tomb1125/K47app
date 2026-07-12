@@ -2606,7 +2606,7 @@
   },
   {
     "id": "inago",
-    "name": "Insgo Medium Battle Walker",
+    "name": "Inago Medium Battle Walker",
     "factionId": "jpn",
 
     "models": 1,
@@ -2631,6 +2631,33 @@
 
     "upgrades": []
   },{
+  "id": "chi_ha_light_tank_jpn",
+  "name": "Type 97-Kai Shiboru Chi-Ha Light Tank",
+  "factionId": "jpn",
+
+  "models": 1,
+
+  "quality": {
+    "inexperienced": 172,
+    "regular": 215,
+    "veteran": 258
+  },
+
+  "options": [
+    {
+      "id": "mmg",
+      "name": "Replace Turret-mounted Type 61 Light Shiboru Cannon with Type 99 Shiboru Cannon and Co-axial MMG",
+      "cost": 25
+    },
+    {
+      "id": "medium_at_gun",
+      "name": "Replace Turret-mounted Type 61 Light Shiboru Cannon with Medium Anti-Tank Gun",
+      "cost": -60
+    }
+  ],
+
+  "upgrades": []
+},{
   "id": "type_3_kai_shiboru_chi_nu_medium_tank_jpn",
   "name": "Type 3-Kai Shiboru Chi-Nu Medium Tank",
   "factionId": "jpn",

@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { useUnitStore } from './unitStore'
 import type { Unit } from '@/types/unit'
+import { v4 as uuidv4 } from 'uuid';
 
 export interface ArmyUpgrade {
   upgradeId: string
@@ -86,7 +87,7 @@ export const useArmyStore = defineStore('army', () => {
   // ➕ add platoon
   function addPlatoon() {
     platoons.value.unshift({
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       units: []
     })
   }
@@ -102,7 +103,7 @@ export const useArmyStore = defineStore('army', () => {
     if (!platoon) return
 
     const unit = {
-      id: crypto.randomUUID() as string,
+      id: uuidv4()  as string,
       unitId: null,
       quality: 'regular',
       upgrades: [],

@@ -22,6 +22,6 @@ export default defineConfig({
   server: {
     host: 'localhost'
   },
-  base: '/'
+  base: '/k47/'
 })
 
