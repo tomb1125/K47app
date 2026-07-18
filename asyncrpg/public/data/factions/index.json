@@ -14,6 +14,16 @@
       "id": "axis",
       "name": "Axis",
       "file": "axis.json"
+    },
+    {
+      "id": "usa",
+      "name": "United States",
+      "file": "usa.json"
+    },
+    {
+      "id": "sov",
+      "name": "Soviet Bloc",
+      "file": "sov.json"
     }
   ]
 }

@@ -1,0 +1,820 @@
+{
+  "id": "usa",
+  "name": "United States",
+  "units": [
+    {
+      "id": "slammer_samuels_usa",
+      "name": "Slammer Samuels",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 158 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "fast", "name": "Fast" },
+        { "id": "heavy", "name": "Heavy" },
+        { "id": "hero", "name": "Hero (May be used as a Company Commander)" }
+      ]
+    },
+    {
+      "id": "roberta_wells_firefly_hero_usa",
+      "name": "Roberta Wells - Firefly Hero",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 135 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "heavy", "name": "Heavy" },
+        { "id": "resourceful", "name": "Resourceful" },
+        { "id": "hero", "name": "Hero (May be used as a Platoon Commander, Firefly Platoon only)" }
+      ]
+    },
+    {
+      "id": "roberta_einstein_wells_usa",
+      "name": "Roberta 'Einstein' Wells (Scientific Advisor, 1945)",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 68 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "fieldcraft", "name": "Fieldcraft" },
+        { "id": "independent", "name": "Independent" },
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "resourceful", "name": "Resourceful" },
+        { "id": "hero", "name": "Hero" }
+      ]
+    },
+    {
+      "id": "company_commander_usa",
+      "name": "Company Commander - Officer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 42, "regular": 60, "veteran": 78 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers with Pistols (No Mixed Quality)", "costInexperienced": 6, "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 }
+      ]
+    },
+    {
+      "id": "company_commander_heavy_armour_usa",
+      "name": "Company Commander - Officer in Heavy Armour",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 80, "veteran": 98 },
+      "options": [
+        { "id": "additional_soldiers_heavy_armour", "name": "Additional Soldiers in Grade 1 Heavy Powered Armour armed with LMGs (No Mixed Quality)", "costRegular": 30, "costVeteran": 33, "addModels": 1, "limit": 2 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "company_commander_firefly_officer_usa",
+      "name": "Company Commander - Firefly Officer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 92 },
+      "options": [
+        { "id": "additional_fireflies", "name": "Additional Fireflies armed with Thompson M1X1/2s", "cost": 27, "addModels": 1, "limit": 2 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "platoon_commander_usa",
+      "name": "Platoon Commander - Officer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 21, "regular": 30, "veteran": 39 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols (No Mixed Quality)", "costInexperienced": 6, "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 }
+      ]
+    },
+    {
+      "id": "platoon_commander_heavy_armour_usa",
+      "name": "Platoon Commander - Officer in Heavy Armour",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 50, "veteran": 59 },
+      "options": [
+        { "id": "additional_soldiers_heavy_armour", "name": "Additional Soldiers in Grade 1 Heavy Powered Armour armed with LMGs (No Mixed Quality)", "costRegular": 30, "costVeteran": 33, "addModels": 1, "limit": 2 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "platoon_commander_firefly_officer_usa",
+      "name": "Platoon Commander - Firefly Officer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 52 },
+      "options": [
+        { "id": "additional_fireflies", "name": "Additional Fireflies armed with Thompson M1X1/2s", "cost": 27, "addModels": 1, "limit": 2 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "medic_usa",
+      "name": "Medic",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 23, "veteran": 30 },
+      "options": [
+        { "id": "additional_soldiers_pistol", "name": "Additional Soldiers armed with Pistols (No Mixed Quality)", "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle (additional soldiers only)", "cost": 1, "limit": 2 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG (additional soldiers only)", "cost": 5, "limit": 2 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle (additional soldiers only)", "cost": 7, "limit": 2 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "medic", "name": "Medic" } ]
+    },
+    {
+      "id": "firefly_medic_usa",
+      "name": "Firefly Medic",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 44 },
+      "options": [
+        { "id": "additional_fireflies", "name": "Additional Fireflies armed with Thompson M1X1/2s", "cost": 27, "addModels": 1, "limit": 2 },
+        { "id": "replace_thompson_smg", "name": "Replace Thompson M1X1/2 with SMG", "cost": -4, "limit": 3 },
+        { "id": "replace_thompson_automatic_rifle", "name": "Replace Thompson M1X1/2 with Automatic Rifle", "cost": -2, "limit": 3 }
+      ],
+      "upgrades": [
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "medic", "name": "Medic" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "artillery_forward_observer_usa",
+      "name": "Artillery Forward Observer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 75, "veteran": 90 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols", "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "modern_communications", "name": "Modern Communications" }
+      ]
+    },
+    {
+      "id": "firefly_artillery_forward_observer_usa",
+      "name": "Firefly Artillery Forward Observer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 104 },
+      "options": [
+        { "id": "additional_fireflies", "name": "Additional Fireflies armed with Thompson M1X1/2s", "cost": 27, "addModels": 1, "limit": 2 },
+        { "id": "replace_thompson_smg", "name": "Replace Thompson M1X1/2 with SMG", "cost": -4, "limit": 3 },
+        { "id": "replace_thompson_automatic_rifle", "name": "Replace Thompson M1X1/2 with Automatic Rifle", "cost": -2, "limit": 3 }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "modern_communications", "name": "Modern Communications" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "air_force_forward_observer_usa",
+      "name": "Air Force Forward Observer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 75, "veteran": 90 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols", "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "modern_communications", "name": "Modern Communications" }
+      ]
+    },
+    {
+      "id": "firefly_air_force_forward_observer_usa",
+      "name": "Firefly Air Force Forward Observer",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "veteran": 104 },
+      "options": [
+        { "id": "additional_fireflies", "name": "Additional Fireflies armed with Thompson M1X1/2s", "cost": 27, "addModels": 1, "limit": 2 },
+        { "id": "replace_thompson_smg", "name": "Replace Thompson M1X1/2 with SMG", "cost": -4, "limit": 3 },
+        { "id": "replace_thompson_automatic_rifle", "name": "Replace Thompson M1X1/2 with Automatic Rifle", "cost": -2, "limit": 3 }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "modern_communications", "name": "Modern Communications" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "rifle_squad_usa",
+      "name": "Rifle Squad",
+      "factionId": "usa",
+      "models": 6,
+      "quality": { "inexperienced": 42, "regular": 60, "veteran": 78 },
+      "options": [
+        { "id": "additional_soldiers", "name": "Additional Soldiers (No Mixed Quality)", "costInexperienced": 7, "costRegular": 10, "costVeteran": 13, "addModels": 1, "limit": 6 },
+        { "id": "replace_rifle_smg", "name": "Replace Rifle with SMG", "cost": 4, "limit": 12 },
+        { "id": "replace_rifle_assault_rifle", "name": "Replace Rifle with Assault Rifle", "cost": 6, "limit": 12 },
+        { "id": "replace_rifle_automatic_rifle", "name": "Replace Rifle with Automatic Rifle", "cost": 6, "limit": 2 },
+        { "id": "rifle_grenades", "name": "Upgrade Rifle with the ability to fire Rifle Grenades", "cost": 6, "limit": 3 },
+        { "id": "replace_rifle_lmg", "name": "Replace Rifle with LMG", "cost": 15, "limit": 2 },
+        { "id": "replace_rifle_flamethrower", "name": "Replace Rifle with Infantry Flamethrower (only if Engineers option taken)", "cost": 30, "limit": 1 }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 },
+        { "id": "engineers", "name": "Engineers", "costPerUnit": 1 }
+      ]
+    },
+    {
+      "id": "us_heavy_infantry_squad_usa",
+      "name": "US Heavy Infantry Squad",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "regular": 90, "veteran": 99 },
+      "options": [
+        { "id": "additional_soldiers_heavy_armour", "name": "Additional Soldiers in Grade 1 Heavy Powered Armour (No Mixed Quality)", "costRegular": 30, "costVeteran": 33, "addModels": 1, "limit": 3 },
+        { "id": "replace_lmg_super_bazooka", "name": "Replace LMG with Super Bazooka", "cost": 55, "limit": 1 }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "firefly_airborne_squad_usa",
+      "name": "Firefly Airborne Squad",
+      "factionId": "usa",
+      "models": 6,
+      "quality": { "veteran": 162 },
+      "options": [
+        { "id": "additional_fireflies", "name": "Additional Fireflies", "cost": 27, "addModels": 1, "limit": 6 },
+        { "id": "replace_thompson_smg", "name": "Replace Thompson M1X1/2 with SMG", "cost": -4, "limit": 12 },
+        { "id": "replace_thompson_automatic_rifle", "name": "Replace Thompson M1X1/2 with Automatic Rifle", "cost": -2, "limit": 2 },
+        { "id": "replace_thompson_flamethrower", "name": "Replace Thompson M1X1/2 with Infantry Flamethrower", "cost": 22, "limit": 1 }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "paracadutisti_firefly_airborne_squad_usa",
+      "name": "Paracadutisti Firefly Airborne Squad",
+      "factionId": "usa",
+      "models": 5,
+      "quality": { "veteran": 120 },
+      "options": [
+        { "id": "additional_paracadutisti_fireflies", "name": "Additional Paracadutisti Fireflies", "cost": 24, "addModels": 1, "limit": 5 },
+        { "id": "replace_smg_grenade_launcher", "name": "Replace SMG with Grenade Launcher (fires both Rifle Grenades and AT Rifle Grenades)", "cost": 22, "limit": 2 }
+      ],
+      "upgrades": [
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "only_human", "name": "Only Human" },
+        { "id": "stubborn", "name": "Stubborn" }
+      ]
+    },
+    {
+      "id": "paragon_squad_usa",
+      "name": "Paragon Squad",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "veteran": 84 },
+      "options": [
+        { "id": "additional_paragons", "name": "Additional Paragons", "cost": 28, "addModels": 1, "limit": 3 },
+        { "id": "replace_smg_heavy_tesla_rifle", "name": "Replace SMG with Heavy Tesla Rifle", "cost": 6, "limit": 2 },
+        { "id": "replace_smg_flamethrower", "name": "Replace SMG with Infantry Flamethrower", "cost": 26, "limit": 1 },
+        { "id": "paragon_close_combat_weapon", "name": "Paragon Close Combat Weapon (Confers Deadly (2) and +1 Pen at Close Quarters)", "cost": 2, "limit": 6 }
+      ],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "fanatics", "name": "Fanatics", "costPerUnit": 2 },
+        { "id": "engineers", "name": "Engineers", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "fast", "name": "Fast" },
+        { "id": "heavy", "name": "Heavy" },
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "tank_hunters", "name": "Tank Hunters" }
+      ]
+    },
+    {
+      "id": "mmg_team_usa",
+      "name": "MMG Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 35, "regular": 50, "veteran": 65 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "hmg_team_usa",
+      "name": "HMG Team",
+      "factionId": "usa",
+      "models": 4,
+      "quality": { "inexperienced": 49, "regular": 70, "veteran": 91 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "bazooka_team_usa",
+      "name": "Bazooka Team",
+      "factionId": "usa",
+      "models": 2,
+      "quality": { "inexperienced": 42, "regular": 60, "veteran": 78 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "super_bazooka_team_usa",
+      "name": "Super Bazooka Team",
+      "factionId": "usa",
+      "models": 2,
+      "quality": { "regular": 105, "veteran": 129 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "sniper_team_usa",
+      "name": "Sniper Team",
+      "factionId": "usa",
+      "models": 2,
+      "quality": { "regular": 52, "veteran": 67 },
+      "options": [
+        { "id": "replace_assistant_pistol_rifle", "name": "Replace the Assistant's Pistol with a Rifle", "cost": 1, "limit": 1 },
+        { "id": "replace_assistant_pistol_smg", "name": "Replace the Assistant's Pistol with an SMG", "cost": 5, "limit": 1 },
+        { "id": "replace_assistant_pistol_assault_rifle", "name": "Replace the Assistant's Pistol with an Assault Rifle", "cost": 7, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "sniper", "name": "Sniper" }
+      ]
+    },
+    {
+      "id": "light_mortar_team_usa",
+      "name": "Light Mortar Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 25, "regular": 35, "veteran": 46 },
+      "options": [
+        { "id": "reduce_team_composition", "name": "Reduce Team Composition to 2 Soldiers", "cost": -5, "addModels": -1, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "medium_mortar_team_usa",
+      "name": "Medium Mortar Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 32, "regular": 45, "veteran": 59 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "heavy_mortar_team_usa",
+      "name": "Heavy Mortar Team",
+      "factionId": "usa",
+      "models": 4,
+      "quality": { "inexperienced": 42, "regular": 60, "veteran": 78 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "flamethrower_team_usa",
+      "name": "Flamethrower Team",
+      "factionId": "usa",
+      "models": 2,
+      "quality": { "regular": 50, "veteran": 65 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "firefly_flamethrower_team_usa",
+      "name": "Firefly Flamethrower Team",
+      "factionId": "usa",
+      "models": 2,
+      "quality": { "veteran": 77 },
+      "options": [],
+      "upgrades": [
+        { "id": "atrds", "name": "ATRDs", "costPerUnit": 5 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "flight", "name": "Flight" },
+        { "id": "only_human", "name": "Only Human" }
+      ]
+    },
+    {
+      "id": "light_artillery_team_usa",
+      "name": "Light Artillery Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 32, "regular": 45, "veteran": 59 },
+      "options": [
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "medium_artillery_team_usa",
+      "name": "Medium Artillery Team",
+      "factionId": "usa",
+      "models": 4,
+      "quality": { "inexperienced": 60, "regular": 85, "veteran": 111 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 },
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "heavy_artillery_team_usa",
+      "name": "Heavy Artillery Team",
+      "factionId": "usa",
+      "models": 5,
+      "quality": { "inexperienced": 95, "regular": 135, "veteran": 176 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 },
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "light_at_gun_team_usa",
+      "name": "Light Anti-tank Gun Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 35, "regular": 50, "veteran": 65 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "medium_at_gun_team_usa",
+      "name": "Medium Anti-tank Gun Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 49, "regular": 70, "veteran": 91 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "heavy_at_gun_team_usa",
+      "name": "Heavy Anti-tank Gun Team",
+      "factionId": "usa",
+      "models": 4,
+      "quality": { "inexperienced": 70, "regular": 100, "veteran": 130 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "super_heavy_at_gun_team_usa",
+      "name": "Super-heavy Anti-tank Gun Team",
+      "factionId": "usa",
+      "models": 5,
+      "quality": { "inexperienced": 98, "regular": 140, "veteran": 182 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "m17_tesla_cannon_team_usa",
+      "name": "M17 Tesla Cannon Team",
+      "factionId": "usa",
+      "models": 3,
+      "quality": { "inexperienced": 88, "regular": 125, "veteran": 163 },
+      "options": [
+        { "id": "heavy_powered_armour_crew", "name": "Upgrade entire crew to wear Grade 1 Heavy Powered Armour (if taken as Regular or Veteran)", "cost": 15, "limit": 1 },
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "m3a2_pondskater_scout_walker_usa",
+      "name": "M3A2 Pondskater Scout Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 80, "veteran": 96 },
+      "options": [
+        { "id": "second_hmg", "name": "Add a second HMG on the same Pintle mount", "cost": 20, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "amphibious", "name": "Amphibious" },
+        { "id": "open_topped", "name": "Open-topped" },
+        { "id": "recce", "name": "Recce" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m3a5_pondskater_scout_walker_usa",
+      "name": "M3A5 Pondskater Scout Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 110, "veteran": 132 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "amphibious", "name": "Amphibious" },
+        { "id": "improved_he", "name": "Improved HE" },
+        { "id": "open_topped", "name": "Open-topped" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m5a2_coyote_light_walker_usa",
+      "name": "M5A2 Coyote Light Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 105, "veteran": 126 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "single_crew_walker", "name": "Single-crew Walker" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m5a5_jackal_light_jump_walker_usa",
+      "name": "M5A5 Jackal Light Jump Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 105, "veteran": 126 },
+      "options": [
+        { "id": "left_arm_flamethrower", "name": "Add an Infantry Flamethrower, mounted to the Left Arm", "cost": 30, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "jump", "name": "Jump" },
+        { "id": "single_crew_walker", "name": "Single-crew Walker" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m2a1_mudskipper_jump_walker_usa",
+      "name": "M2A1 Mudskipper Jump Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 290, "veteran": 348 },
+      "options": [
+        { "id": "replace_arm_hmg_bazooka", "name": "Replace Arm-mounted HMG with Arm-mounted Bazooka", "cost": 5, "limit": 2 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "jump", "name": "Jump" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m2a5_linebacker_jump_walker_usa",
+      "name": "M2A5 Linebacker Jump Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 328, "veteran": 394 },
+      "options": [
+        { "id": "replace_twin_hmg_light_auto_cannons", "name": "Replace Arm-mounted Twin HMGs with Twin Light Automatic Cannons", "cost": 0, "limit": 1 },
+        { "id": "replace_twin_hmg_super_bazookas", "name": "Replace Arm-mounted Twin HMGs with Twin Super Bazookas", "cost": 60, "limit": 1 },
+        { "id": "replace_hull_mmg_flamethrower", "name": "Replace Hull-mounted Twin MMGs with an Infantry Flamethrower", "cost": 10, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "jump", "name": "Jump" },
+        { "id": "reinforced_front_armour", "name": "Reinforced Front Armour" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m8a1_grizzly_medium_assault_walker_usa",
+      "name": "M8A1 Grizzly Medium Assault Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 225, "veteran": 270 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "improved_he", "name": "Improved HE" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m8a4_bruin_medium_support_walker_usa",
+      "name": "M8A4 Bruin Medium Support Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 275, "veteran": 330 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "improved_he", "name": "Improved HE" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "m9a2_kodiak_close_assault_walker_usa",
+      "name": "M9A2 Kodiak Close Assault Walker",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "regular": 335, "veteran": 402 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "two_legged", "name": "Two-legged" } ]
+    },
+    {
+      "id": "m3a4_stuart_light_tank_usa",
+      "name": "M3A4(T) Stuart Light Tank",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 104, "regular": 130 },
+      "options": [
+        { "id": "replace_tesla_cannon_at_gun", "name": "Replace Turret-mounted M21 Light Tesla Cannon with Light Anti-tank Gun & Co-axial MMG", "cost": 0, "limit": 1 },
+        { "id": "add_pintle_mmg", "name": "Add a Pintle-mounted MMG", "cost": 15, "limit": 1 },
+        { "id": "reinforced_front_armour", "name": "Gain the Reinforced Front Armour special rule", "cost": 20, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "vulnerable", "name": "Vulnerable" } ]
+    },
+    {
+      "id": "m5a2_stuart_light_tank_usa",
+      "name": "M5A2(T) Stuart Light Tank",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 112, "regular": 140, "veteran": 178 },
+      "options": [
+        { "id": "replace_tesla_cannon_at_gun", "name": "Replace Turret-mounted M21 Light Tesla Cannon with Light Anti-tank Gun & Co-axial MMG", "cost": 0, "limit": 1 },
+        { "id": "add_pintle_mmg", "name": "Add a Pintle-mounted MMG", "cost": 15, "limit": 1 },
+        { "id": "add_pintle_hmg", "name": "Add a Pintle-mounted HMG", "cost": 25, "limit": 1 },
+        { "id": "gain_recce", "name": "Gain the Recce special rule", "cost": 10, "limit": 1 },
+        { "id": "reinforced_front_armour", "name": "Gain the Reinforced Front Armour special rule", "cost": 20, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "gyro_stabilisers", "name": "Gyro-Stabilisers" } ]
+    },
+    {
+      "id": "m4a9_sherman_medium_tank_usa",
+      "name": "M4A9(T) Sherman Medium Tank",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 200, "regular": 250, "veteran": 310 },
+      "options": [
+        { "id": "replace_tesla_cannon_medium_at_gun", "name": "Replace Turret-mounted M17 Tesla Cannon with Medium Anti-tank Gun and Co-axial MMG (Improved HE)", "cost": -40, "limit": 1 },
+        { "id": "replace_tesla_cannon_heavy_at_gun", "name": "Replace Turret-mounted M17 Tesla Cannon with Heavy Anti-tank Gun & Co-axial MMG", "cost": -25, "limit": 1 },
+        { "id": "add_pintle_mmg", "name": "Add a Pintle-mounted MMG", "cost": 15, "limit": 1 },
+        { "id": "add_pintle_hmg", "name": "Add a Pintle-mounted HMG", "cost": 25, "limit": 1 },
+        { "id": "reinforced_front_armour", "name": "Gain the Reinforced Front Armour special rule", "cost": 35, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "gyro_stabilisers", "name": "Gyro-Stabilisers" } ]
+    },
+    {
+      "id": "m17_tesla_cannon_emplacement_usa",
+      "name": "M17 Tesla Cannon Emplacement",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 168, "regular": 210, "veteran": 252 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "armoured_all_round", "name": "Armoured All Round" },
+        { "id": "emplacement", "name": "Emplacement" }
+      ]
+    },
+    {
+      "id": "m8a3_scout_car_usa",
+      "name": "M8A3(T) Scout Car",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 88, "regular": 110, "veteran": 132 },
+      "options": [
+        { "id": "replace_tesla_cannon_at_gun", "name": "Replace Turret-mounted M21 Light Tesla Cannon with Light Anti-tank Gun & Co-axial MMG (gains Open-topped)", "cost": -10, "limit": 1 },
+        { "id": "add_pintle_mmg", "name": "Add a Pintle-mounted MMG", "cost": 15, "limit": 1 },
+        { "id": "add_pintle_hmg", "name": "Add a Pintle-mounted HMG", "cost": 25, "limit": 1 },
+        { "id": "gain_recce", "name": "Gain the Recce special rule", "cost": 10, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "m3_half_track_usa",
+      "name": "M3 Half-Track",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 62, "regular": 77, "veteran": 92 },
+      "options": [
+        { "id": "add_pintle_mmg", "name": "Add a Pintle-mounted MMG (left, right, or rear arc)", "cost": 15, "limit": 3 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "open_topped", "name": "Open-topped" } ]
+    },
+    {
+      "id": "studebaker_us6_usa",
+      "name": "Studebaker US6",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 26, "regular": 33, "veteran": 40 },
+      "options": [
+        { "id": "add_pintle_lmg", "name": "Add a Forward-facing Pintle-mounted LMG", "cost": 10, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "jeep_usa",
+      "name": "Jeep",
+      "factionId": "usa",
+      "models": 1,
+      "quality": { "inexperienced": 14, "regular": 18, "veteran": 22 },
+      "options": [],
+      "upgrades": []
+    }
+  ]
+}

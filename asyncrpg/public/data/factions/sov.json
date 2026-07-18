@@ -1,0 +1,603 @@
+{
+  "id": "sov",
+  "name": "Soviet Bloc",
+  "units": [
+    {
+      "id": "commissar_gregor_drugov_sov",
+      "name": "Commissar Gregor Drugov",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "veteran": 160 },
+      "options": [
+        { "id": "ursus_bodyguards", "name": "May be accompanied by Ursus Bodyguards", "cost": 43, "addModels": 1, "limit": 2 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "deadly_3", "name": "Deadly (3) - Drugov; Deadly (4) - Ursus Bodyguards" },
+        { "id": "fearless", "name": "Fearless" },
+        { "id": "hard_to_kill", "name": "Hard to Kill" },
+        { "id": "horror", "name": "Horror" },
+        { "id": "large", "name": "Large" },
+        { "id": "tough_fighters", "name": "Tough Fighters (Drugov only)" },
+        { "id": "wide_formation", "name": "Wide Formation" },
+        { "id": "hero", "name": "Hero (May be used as a Company Commander)" }
+      ]
+    },
+    {
+      "id": "company_commander_sov",
+      "name": "Company Commander - Officer",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 42, "regular": 60, "veteran": 78 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers with Pistols (No Mixed Quality)", "costInexperienced": 6, "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 }
+      ]
+    },
+    {
+      "id": "company_commander_guards_mk2_armour_sov",
+      "name": "Company Commander - Officer in Guards Mk II Armour",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 69, "veteran": 87 },
+      "options": [
+        { "id": "additional_soldiers_guards_mk2", "name": "Additional Soldiers in Grade 1 Heavy Powered Armour armed with SMGs (No Mixed Quality)", "costRegular": 19, "costVeteran": 22, "addModels": 1, "limit": 2 },
+        { "id": "replace_smg_at_rifle", "name": "Replace SMG with Anti-tank Rifle", "cost": 11, "limit": 1 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "platoon_commander_sov",
+      "name": "Platoon Commander - Officer",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 21, "regular": 30, "veteran": 39 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols (No Mixed Quality)", "costInexperienced": 6, "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 }
+      ]
+    },
+    {
+      "id": "platoon_commander_guards_mk2_armour_sov",
+      "name": "Platoon Commander - Officer in Guards Mk II Armour",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 39, "veteran": 48 },
+      "options": [
+        { "id": "additional_soldiers_guards_mk2", "name": "Additional Soldiers in Grade 1 Heavy Powered Armour armed with SMGs (No Mixed Quality)", "costRegular": 19, "costVeteran": 22, "addModels": 1, "limit": 2 },
+        { "id": "replace_smg_at_rifle", "name": "Replace SMG with Anti-tank Rifle", "cost": 11, "limit": 1 },
+        { "id": "guts", "name": "Guts", "cost": 10, "limit": 1, "group": "hero_ability" },
+        { "id": "luck", "name": "Luck", "cost": 15, "limit": 1, "group": "hero_ability" }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 }
+      ],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "medic_sov",
+      "name": "Medic",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 23, "veteran": 30 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols", "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle (additional soldiers only)", "cost": 1, "limit": 2 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG (additional soldiers only)", "cost": 5, "limit": 2 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle (additional soldiers only)", "cost": 7, "limit": 2 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "medic", "name": "Medic" } ]
+    },
+    {
+      "id": "artillery_forward_observer_sov",
+      "name": "Artillery Forward Observer",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 75, "veteran": 90 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols", "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "infiltrator", "name": "Infiltrator" } ]
+    },
+    {
+      "id": "air_force_forward_observer_sov",
+      "name": "Air Force Forward Observer",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 75, "veteran": 90 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols", "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "infiltrator", "name": "Infiltrator" } ]
+    },
+    {
+      "id": "commissar_sov",
+      "name": "Commissar",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 15, "regular": 21, "veteran": 27 },
+      "options": [
+        { "id": "additional_soldiers_pistols", "name": "Additional Soldiers armed with Pistols (No Mixed Quality)", "costInexperienced": 6, "costRegular": 9, "costVeteran": 12, "addModels": 1, "limit": 2 },
+        { "id": "replace_pistol_rifle", "name": "Replace Pistol with Rifle", "cost": 1, "limit": 3 },
+        { "id": "replace_pistol_smg", "name": "Replace Pistol with SMG", "cost": 5, "limit": 3 },
+        { "id": "replace_pistol_assault_rifle", "name": "Replace Pistol with Assault Rifle", "cost": 7, "limit": 3 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "commissar", "name": "Commissar - A Soviet Bloc force can include a single Commissar, not part of any Platoon Selector, in the same way as a Company Commander" },
+        { "id": "not_one_step_back", "name": "Not One Step Back!" }
+      ]
+    },
+    {
+      "id": "soviet_infantry_squad_sov",
+      "name": "Soviet Infantry Squad",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "inexperienced": 35, "regular": 50, "veteran": 65 },
+      "options": [
+        { "id": "additional_soldiers", "name": "Additional Soldiers (No Mixed Quality)", "costInexperienced": 7, "costRegular": 10, "costVeteran": 13, "addModels": 1, "limit": 7 },
+        { "id": "replace_rifle_smg", "name": "Replace Rifle with SMG", "cost": 4, "limit": 12 },
+        { "id": "replace_rifle_assault_rifle", "name": "Replace Rifle with Assault Rifle", "cost": 6, "limit": 12 },
+        { "id": "replace_rifle_lmg", "name": "Replace Rifle with LMG", "cost": 15, "limit": 2 },
+        { "id": "replace_rifle_flamethrower", "name": "Replace Rifle with Infantry Flamethrower (only if Engineers option taken)", "cost": 30, "limit": 1 }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn (Veteran Squads only)", "costPerUnit": 1 },
+        { "id": "tough_fighters", "name": "Tough Fighters (Veteran Squads only)", "costPerUnit": 1 },
+        { "id": "engineers", "name": "Engineers", "costPerUnit": 1 },
+        { "id": "shirkers", "name": "Shirkers (Inexperienced Squads only)", "costPerUnit": -2 },
+        { "id": "green", "name": "Green (Inexperienced Squads only)", "costPerUnit": 0 }
+      ]
+    },
+    {
+      "id": "guards_mk1_armoured_infantry_sov",
+      "name": "Guards Mk I Armoured Infantry",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "regular": 135, "veteran": 150 },
+      "options": [
+        { "id": "additional_soldiers_guards_mk1", "name": "Additional Soldiers in Guards Mk I Armour (No Mixed Quality)", "costRegular": 27, "costVeteran": 30, "addModels": 1, "limit": 5 },
+        { "id": "additional_dpm_pulemet_poykbi", "name": "Equip a soldier with an additional DPM Pulemet-Poykbi", "cost": 15, "limit": 4 }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 },
+        { "id": "engineers", "name": "Engineers", "costPerUnit": 1 }
+      ],
+      "rules": [
+        { "id": "heavy", "name": "Heavy" },
+        { "id": "lumbering", "name": "Lumbering - movement rate of 4\" on an Advance Order and 8\" on a Run Order" }
+      ]
+    },
+    {
+      "id": "guards_mk2_armoured_infantry_sov",
+      "name": "Guards Mk II Armoured Infantry",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "regular": 95, "veteran": 110 },
+      "options": [
+        { "id": "additional_soldiers_guards_mk2", "name": "Additional Soldiers in Guards Mk II Armour (No Mixed Quality)", "costRegular": 19, "costVeteran": 22, "addModels": 1, "limit": 5 },
+        { "id": "replace_smg_at_rifle", "name": "Replace SMG with Anti-tank Rifle", "cost": 11, "limit": 2 }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 },
+        { "id": "stubborn", "name": "Stubborn", "costPerUnit": 1 },
+        { "id": "engineers", "name": "Engineers", "costPerUnit": 1 }
+      ],
+      "rules": [ { "id": "heavy", "name": "Heavy" } ]
+    },
+    {
+      "id": "moroz_gul_sov",
+      "name": "Moroz Gul",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "veteran": 140 },
+      "options": [
+        { "id": "additional_moroz_gul", "name": "Additional Moroz Gul", "cost": 28, "addModels": 1, "limit": 5 },
+        { "id": "replace_smg_assault_rifle", "name": "Replace SMG with Assault Rifle", "cost": 2, "limit": 10 }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 }
+      ],
+      "rules": [
+        { "id": "fast", "name": "Fast" },
+        { "id": "fieldcraft", "name": "Fieldcraft" },
+        { "id": "frozen_meat", "name": "Frozen Meat - immune to damage and Pinning effects from Flamethrowers" },
+        { "id": "horror", "name": "Horror" },
+        { "id": "infiltrator", "name": "Infiltrator" }
+      ]
+    },
+    {
+      "id": "ursus_infantry_sov",
+      "name": "Ursus Infantry",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "veteran": 129 },
+      "options": [
+        { "id": "additional_ursus_infantry", "name": "Additional Ursus Infantry", "cost": 43, "addModels": 1, "limit": 3 }
+      ],
+      "upgrades": [
+        { "id": "equip_mauls", "name": "Equip the unit with Mauls (Confers re-rolls to hit against Vehicles at Close Quarters)", "costPerUnit": 10 }
+      ],
+      "rules": [
+        { "id": "deadly_4", "name": "Deadly (4)" },
+        { "id": "fearless", "name": "Fearless" },
+        { "id": "hard_to_kill", "name": "Hard to Kill" },
+        { "id": "horror", "name": "Horror" },
+        { "id": "large", "name": "Large" },
+        { "id": "wide_formation", "name": "Wide Formation" }
+      ]
+    },
+    {
+      "id": "daughters_of_the_motherland_sov",
+      "name": "Daughters of the Motherland",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "veteran": 145 },
+      "options": [
+        { "id": "additional_daughters", "name": "Additional Daughters of the Motherland", "cost": 28, "addModels": 1, "limit": 5 },
+        { "id": "replace_assault_rifle_lmg", "name": "Replace Assault Rifle with LMG", "cost": 9, "limit": 2 },
+        { "id": "replace_assault_rifle_zvukovoy_avtomat", "name": "Replace Assault Rifle with Zvukovoy Avtomat", "cost": 29, "limit": 2 }
+      ],
+      "upgrades": [
+        { "id": "rpg1s", "name": "RPG-1s", "costPerUnit": 5 },
+        { "id": "anti_tank_grenades", "name": "Anti-tank Grenades", "costPerUnit": 2 }
+      ],
+      "rules": [
+        { "id": "fanatics", "name": "Fanatics" },
+        { "id": "fast", "name": "Fast" }
+      ]
+    },
+    {
+      "id": "mmg_team_sov",
+      "name": "MMG Team",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "inexperienced": 35, "regular": 50, "veteran": 65 },
+      "options": [
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "hmg_team_sov",
+      "name": "HMG Team",
+      "factionId": "sov",
+      "models": 4,
+      "quality": { "inexperienced": 49, "regular": 70, "veteran": 91 },
+      "options": [
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 },
+        { "id": "flak", "name": "Gain the Flak special rule", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "at_rifle_team_sov",
+      "name": "Anti-tank Rifle Team",
+      "factionId": "sov",
+      "models": 2,
+      "quality": { "inexperienced": 18, "regular": 25, "veteran": 33 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "sniper_team_sov",
+      "name": "Sniper Team",
+      "factionId": "sov",
+      "models": 2,
+      "quality": { "regular": 52, "veteran": 67 },
+      "options": [
+        { "id": "replace_leader_rifle_at_rifle", "name": "Replace the Team Leader's Rifle with an Anti-tank Rifle (Retains the benefits of the Sniper rule except that its range remains 48\" when using the scope)", "cost": 15, "limit": 1 },
+        { "id": "replace_assistant_pistol_rifle", "name": "Replace the Assistant's Pistol with a Rifle", "cost": 1, "limit": 1 },
+        { "id": "replace_assistant_pistol_smg", "name": "Replace the Assistant's Pistol with an SMG", "cost": 5, "limit": 1 },
+        { "id": "replace_assistant_pistol_assault_rifle", "name": "Replace the Assistant's Pistol with an Assault Rifle", "cost": 7, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "infiltrator", "name": "Infiltrator" },
+        { "id": "sniper", "name": "Sniper" }
+      ]
+    },
+    {
+      "id": "light_mortar_team_sov",
+      "name": "Light Mortar Team",
+      "factionId": "sov",
+      "models": 2,
+      "quality": { "inexperienced": 21, "regular": 30, "veteran": 39 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "medium_mortar_team_sov",
+      "name": "Medium Mortar Team",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "inexperienced": 32, "regular": 45, "veteran": 59 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "heavy_mortar_team_sov",
+      "name": "Heavy Mortar Team",
+      "factionId": "sov",
+      "models": 4,
+      "quality": { "inexperienced": 42, "regular": 60, "veteran": 78 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "flamethrower_team_sov",
+      "name": "Flamethrower Team",
+      "factionId": "sov",
+      "models": 2,
+      "quality": { "regular": 50, "veteran": 65 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "light_artillery_team_sov",
+      "name": "Light Artillery Team",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "inexperienced": 32, "regular": 45, "veteran": 59 },
+      "options": [
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "medium_artillery_team_sov",
+      "name": "Medium Artillery Team",
+      "factionId": "sov",
+      "models": 4,
+      "quality": { "inexperienced": 60, "regular": 85, "veteran": 111 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 },
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "heavy_artillery_team_sov",
+      "name": "Heavy Artillery Team",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "inexperienced": 95, "regular": 135, "veteran": 176 },
+      "options": [
+        { "id": "spotter", "name": "Spotter (if taken as Regular or Veteran)", "cost": 10, "addModels": 1, "limit": 1 },
+        { "id": "gun_shield", "name": "Add a Gun Shield", "cost": 5, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "light_at_gun_team_sov",
+      "name": "Light Anti-tank Gun Team",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "inexperienced": 35, "regular": 50, "veteran": 65 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "medium_at_gun_team_sov",
+      "name": "Medium Anti-tank Gun Team",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "inexperienced": 49, "regular": 70, "veteran": 91 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "heavy_at_gun_team_sov",
+      "name": "Heavy Anti-tank Gun Team",
+      "factionId": "sov",
+      "models": 4,
+      "quality": { "inexperienced": 70, "regular": 100, "veteran": 130 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "super_heavy_at_gun_team_sov",
+      "name": "Super-heavy Anti-tank Gun Team",
+      "factionId": "sov",
+      "models": 5,
+      "quality": { "inexperienced": 98, "regular": 140, "veteran": 182 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "gun_shield", "name": "Gun Shield" } ]
+    },
+    {
+      "id": "zvukovoy_proeyektor_team_sov",
+      "name": "Zvukovoy Proeyektor Team",
+      "factionId": "sov",
+      "models": 3,
+      "quality": { "inexperienced": 84, "regular": 120, "veteran": 156 },
+      "options": [],
+      "upgrades": []
+    },
+    {
+      "id": "kazak_light_walker_sov",
+      "name": "Kazak Light Walker",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 115, "veteran": 138 },
+      "options": [
+        { "id": "replace_light_auto_cannon_at_gun", "name": "Replace Forward-facing Light Automatic Cannon with Light Anti-tank Gun", "cost": 20, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "recce", "name": "Recce" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "dm40_molot_medium_walker_sov",
+      "name": "DM-40 Molot Medium Walker",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 238, "veteran": 286 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "reinforced_front_armour", "name": "Reinforced Front Armour" },
+        { "id": "slow", "name": "Slow" },
+        { "id": "two_legged", "name": "Two-legged" }
+      ]
+    },
+    {
+      "id": "mahmot_heavy_walker_sov",
+      "name": "Mahmot Heavy Walker",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 495, "veteran": 594 },
+      "options": [
+        { "id": "reinforced_front_armour", "name": "Reinforced Front Armour", "cost": 55, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "multi_legged", "name": "Multi-legged" },
+        { "id": "slow", "name": "Slow" }
+      ]
+    },
+    {
+      "id": "mastodont_heavy_walker_sov",
+      "name": "Mastodont Heavy Walker",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "regular": 430, "veteran": 516 },
+      "options": [
+        { "id": "reinforced_front_armour", "name": "Reinforced Front Armour", "cost": 55, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [
+        { "id": "multi_legged", "name": "Multi-legged" },
+        { "id": "slow", "name": "Slow" }
+      ]
+    },
+    {
+      "id": "t34_zp_medium_tank_sov",
+      "name": "T-34/ZP Medium Tank",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 192, "regular": 240, "veteran": 288 },
+      "options": [
+        { "id": "replace_zvukovoy_proeyektor_at_gun", "name": "Replace Turret-mounted Zvukovoy Proeyektor with Heavy Anti-tank Gun & Co-axial MMG", "cost": -15, "limit": 1 },
+        { "id": "replace_hull_mmg_flamethrower", "name": "Replace Hull-mounted MMG with a Vehicle Flamethrower", "cost": 40, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "kv_zp_heavy_tank_sov",
+      "name": "KV-ZP Heavy Tank",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 256, "regular": 320, "veteran": 384 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "armoured_all_round", "name": "Armoured All Round" },
+        { "id": "slow", "name": "Slow" }
+      ]
+    },
+    {
+      "id": "zvukovoy_proeyektor_emplacement_sov",
+      "name": "Zvukovoy Proeyektor Emplacement",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 160, "regular": 200, "veteran": 240 },
+      "options": [],
+      "upgrades": [],
+      "rules": [
+        { "id": "armoured_all_round", "name": "Armoured All Round" },
+        { "id": "emplacement", "name": "Emplacement - starts the game with an Immobilised result" }
+      ]
+    },
+    {
+      "id": "truck_sov",
+      "name": "Truck",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 22, "regular": 27, "veteran": 32 },
+      "options": [
+        { "id": "add_pintle_lmg", "name": "Add a Forward-facing Pintle-mounted LMG", "cost": 10, "limit": 1 }
+      ],
+      "upgrades": []
+    },
+    {
+      "id": "m3_white_scout_car_sov",
+      "name": "M3 White Scout Car",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 54, "regular": 68, "veteran": 82 },
+      "options": [
+        { "id": "add_pintle_mmg_right_rear", "name": "Add a Pintle-mounted MMG covering the right and rear arcs", "cost": 15, "limit": 1 },
+        { "id": "add_pintle_mmg_left_rear", "name": "Add a Pintle-mounted MMG covering the left and rear arcs", "cost": 15, "limit": 1 }
+      ],
+      "upgrades": [],
+      "rules": [ { "id": "open_topped", "name": "Open-topped" } ]
+    },
+    {
+      "id": "t20_komsomolets_sov",
+      "name": "T-20 Komsomolets",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 37, "regular": 46, "veteran": 55 },
+      "options": [],
+      "upgrades": [],
+      "rules": [ { "id": "open_topped", "name": "Open-topped" } ]
+    },
+    {
+      "id": "gaz_jeep_sov",
+      "name": "GAZ 'Jeep'",
+      "factionId": "sov",
+      "models": 1,
+      "quality": { "inexperienced": 14, "regular": 18, "veteran": 22 },
+      "options": [],
+      "upgrades": []
+    }
+  ]
+}
