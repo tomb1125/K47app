@@ -14,11 +14,18 @@ export const useUnitStore = defineStore('units', () => {
   async function load() {
     if (loaded.value) return
 
-    const res = await fetch(`${import.meta.env.BASE_URL}data/units.json`)
-    const data = await res.json()
+    const base = import.meta.env.BASE_URL
+    const manifestRes = await fetch(`${base}data/factions/index.json`)
+    const manifest = await manifestRes.json()
 
-    units.value = data.units
-    factions.value = data.factions
+    const factionFiles = await Promise.all(
+      manifest.factions.map((f: { file: string }) =>
+        fetch(`${base}data/factions/${f.file}`).then(res => res.json())
+      )
+    )
+
+    factions.value = factionFiles.map(f => ({ id: f.id, name: f.name }))
+    units.value = factionFiles.flatMap(f => f.units)
 
     // set default faction once loaded
     if (factions.value.length > 0 && !selectedFaction.value) {

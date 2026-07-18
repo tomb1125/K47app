@@ -1,0 +1,19 @@
+{
+  "factions": [
+    {
+      "id": "cmn",
+      "name": "British Commonwealth",
+      "file": "cmn.json"
+    },
+    {
+      "id": "jpn",
+      "name": "Empire of Japan",
+      "file": "jpn.json"
+    },
+    {
+      "id": "axis",
+      "name": "Axis",
+      "file": "axis.json"
+    }
+  ]
+}
