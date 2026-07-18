@@ -218,6 +218,12 @@ function toggle(propertyId: string, selected: boolean) {
   margin: 2px 0;
 }
 
+.unit select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr auto min-content;

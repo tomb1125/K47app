@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import path from 'path'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     vue(),
     vueJsx(),
@@ -17,11 +17,12 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
-    
+
   },
   server: {
     host: 'localhost'
   },
-  base: '/k47/'
-})
+  // production is served from the /k47/ subfolder; local dev serves from the root
+  base: command === 'build' ? '/k47/' : '/'
+}))
 

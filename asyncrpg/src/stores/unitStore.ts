@@ -14,7 +14,7 @@ export const useUnitStore = defineStore('units', () => {
   async function load() {
     if (loaded.value) return
 
-    const res = await fetch('/k47/data/units.json')
+    const res = await fetch(`${import.meta.env.BASE_URL}data/units.json`)
     const data = await res.json()
 
     units.value = data.units
