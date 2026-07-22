@@ -28,8 +28,9 @@ export const useUnitStore = defineStore('units', () => {
     units.value = factionFiles.flatMap(f => f.units)
 
     // set default faction once loaded
-    if (factions.value.length > 0 && !selectedFaction.value) {
-      selectedFaction.value// = factions.value[0].id
+    const firstFaction = factions.value[0]
+    if (firstFaction && !selectedFaction.value) {
+      selectedFaction.value = firstFaction.id
     }
 
     loaded.value = true

@@ -2,7 +2,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { useUnitStore } from './unitStore'
-import type { Unit } from '@/types/unit'
 import { v4 as uuidv4 } from 'uuid';
 
 export interface ArmyUpgrade {
@@ -188,7 +187,7 @@ function setQuality(platoonId: string, unitId: string, quality: string) {
     unit.quality = quality as ArmyUnit['quality'] 
   }
 
-function getUnitModelCount(unit: Unit | ArmyUnit): number {
+function getUnitModelCount(unit: ArmyUnit): number {
   const unitStore = useUnitStore()
 
   if (!unit.unitId) return 0

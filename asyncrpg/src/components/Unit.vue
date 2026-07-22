@@ -3,11 +3,11 @@ import { computed } from 'vue'
 import { useArmyStore, type ArmyUnit } from '@/stores/armyStore'
 import { useUnitStore } from '@/stores/unitStore'
 import { storeToRefs } from 'pinia'
-import type { ArmyProperty, ArmyUpgrade, Unit } from '@/types/unit';
+import type { UnitOption } from '@/types/unit';
 
 const props = defineProps<{
   platoonId: string
-  unit: Unit
+  unit: ArmyUnit
 }>()
 
 const armyStore = useArmyStore()
@@ -47,7 +47,7 @@ const properties = computed(() =>
   selectedDefinition.value?.upgrades || []
 )
 
-function formatUpgradeCost(unit: Unit | ArmyUnit, opt: any) {
+function formatUpgradeCost(unit: ArmyUnit, opt: UnitOption) {
   if (!unit.quality) return ''
 
   const costMap = {
@@ -56,7 +56,7 @@ function formatUpgradeCost(unit: Unit | ArmyUnit, opt: any) {
     veteran: opt.costVeteran
   }
 
-  const cost = costMap[(unit.quality as ArmyUnit['quality']) ?? 'regular'] ?? opt.cost ?? 0
+  const cost = costMap[unit.quality] ?? opt.cost ?? 0
 
   return cost > 0 ? `+${cost}` : `${cost}`
 }

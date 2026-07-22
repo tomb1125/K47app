@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useArmyStore } from '@/stores/armyStore'
+import { useArmyStore, type ArmyUnit } from '@/stores/armyStore'
 import Unit from './Unit.vue'
 
 const props = defineProps<{
   platoon: {
     id: string
-    units: any[]
+    units: ArmyUnit[]
   }
 }>()
 

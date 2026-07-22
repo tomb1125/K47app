@@ -4,10 +4,14 @@ export interface Faction {
 }
 
 // src/types/unit.ts
+//
+// These types describe a unit *definition* — the static stat block loaded
+// from public/data/factions/<id>.json. A player's configured copy of a unit
+// in an army is a separate type, `ArmyUnit` (see src/stores/armyStore.ts) —
+// don't add instance-only fields (selected quality, chosen upgrade counts,
+// etc.) here.
 export interface Unit {
-  selectedQuality: string
   id: string
-  unitId : string | null
   name: string
   factionId: string
   quality: {
@@ -16,16 +20,15 @@ export interface Unit {
     veteran?: number | null
   }
   models: number
-  options: ArmyUpgrade[]
-  upgrades: ArmyProperty[]
+  options: UnitOption[]
+  upgrades: UnitUpgrade[]
 }
 
-export interface ArmyUpgrade {
+// A choosable option on a unit definition (per-quality cost override, optional
+// extra models, optional pick limit). Corresponds to `Unit.options`.
+export interface UnitOption {
   id: string
   name: string
-  upgradeId: string | null
-  propertyId: string | null
-  count: number
   addModels?: number
   cost: number
   costInexperienced?: number
@@ -34,13 +37,10 @@ export interface ArmyUpgrade {
   limit: number
 }
 
-
-export interface ArmyProperty {
+// A squad-wide upgrade on a unit definition, costed per model.
+// Corresponds to `Unit.upgrades`.
+export interface UnitUpgrade {
   id: string
   name: string
-  upgradeId: string | null
-  propertyId: string | null
-  selected: boolean
   costPerUnit: number | null
-  count?: number
 }
